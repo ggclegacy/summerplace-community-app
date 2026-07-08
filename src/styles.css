@@ -12,8 +12,9 @@
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 12% 18%, rgba(80, 150, 245, 0.18), transparent 28rem),
-    radial-gradient(circle at 88% 58%, rgba(180, 208, 230, 0.12), transparent 28rem),
+    radial-gradient(circle at 12% 18%, rgba(67, 140, 230, 0.2), transparent 28rem),
+    radial-gradient(circle at 88% 58%, rgba(184, 199, 214, 0.13), transparent 28rem),
+    linear-gradient(180deg, rgba(7, 17, 31, 0), rgba(7, 17, 31, 0.92) 34rem),
     #07111f;
 }
 
@@ -24,6 +25,7 @@ body {
 @layer components {
   .glass-card {
     @apply rounded-xl border border-white/10 bg-white/[0.065] shadow-glass backdrop-blur-xl;
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.095), rgba(255,255,255,0.035));
   }
 
   .primary-btn {
@@ -35,15 +37,25 @@ body {
   }
 }
 
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(84, 153, 235, 0.28), transparent 28%),
+    radial-gradient(circle at 82% 32%, rgba(214, 226, 238, 0.14), transparent 26%),
+    radial-gradient(circle at 68% 78%, rgba(22, 78, 136, 0.38), transparent 34%),
+    linear-gradient(135deg, #07111f 0%, #0b2548 44%, #202832 100%);
+}
+
 .grid-overlay {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at 50% 35%, black, transparent 72%);
-  opacity: 0.55;
+  opacity: 0.48;
 }
 
 .float-card {
@@ -55,6 +67,42 @@ body {
   background: linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.03));
   box-shadow: 0 24px 80px rgba(0,0,0,0.22);
   backdrop-filter: blur(18px);
+}
+
+.map-lines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background:
+    linear-gradient(115deg, transparent 0 18%, rgba(127,214,255,0.16) 18.2%, transparent 18.7% 100%),
+    linear-gradient(45deg, transparent 0 36%, rgba(184,199,214,0.14) 36.2%, transparent 36.7% 100%),
+    linear-gradient(160deg, transparent 0 56%, rgba(127,214,255,0.12) 56.2%, transparent 56.7% 100%);
+}
+
+.node-field span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(127, 214, 255, 0.72);
+  box-shadow: 0 0 24px rgba(127, 214, 255, 0.55);
+}
+
+.phone-shell {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  filter: drop-shadow(0 34px 60px rgba(1, 8, 18, 0.42));
+}
+
+.phone-shell::before {
+  content: "";
+  position: absolute;
+  inset: 8% -8% 9% auto;
+  width: 42%;
+  border-radius: 999px;
+  background: rgba(127, 214, 255, 0.18);
+  filter: blur(42px);
 }
 
 section::before {
@@ -69,13 +117,21 @@ section::before {
   pointer-events: none;
 }
 
+section {
+  scroll-margin-top: 5.5rem;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .float-card {
+    display: none;
+  }
+
+  .node-field span:nth-child(n + 9) {
     display: none;
   }
 }
