@@ -181,6 +181,61 @@ const managementCards = [
 const existingSystems = ["Rent portal", "Maintenance portal", "Mass texting", "Website", "Lease documents"];
 const communityAppSystems = ["Resident onboarding", "Learning guides", "Ask Summer concierge", "Community updates", "Local perks", "Resident knowledge base"];
 
+const summaryValues = [
+  ["Resident Value", "Less confusion. More clarity. A smoother place to live.", Users],
+  ["Staff Value", "Fewer repeated questions and a better place to point residents.", ClipboardCheck],
+  ["Community Value", "A stronger sense that Summer Place is cared for, organized, and connected.", Sparkles],
+];
+
+const whyNowCards = [
+  ["Renovations improve the property.", Building2],
+  ["Communication improves awareness.", MessageCircle],
+  ["A community app improves how residents experience living here.", Home],
+];
+
+const isList = [
+  "A resident experience layer",
+  "A new resident onboarding hub",
+  "A living guidebook",
+  "A community home base",
+  "A smarter place for common questions",
+  "A way to make care more visible",
+];
+
+const isNotList = [
+  "A replacement for the rent portal",
+  "A replacement for the maintenance system",
+  "A replacement for staff",
+  "A replacement for corporate communication",
+  "A complicated operational system",
+  "A generic apartment app",
+];
+
+const localStandoutCards = [
+  ["More organized than a text thread", "Updates, guides, and answers stay available after the moment passes.", MessageCircle],
+  ["More helpful than a flyer", "Residents can tap into the exact topic they need when they need it.", BookOpen],
+  ["More personal than a generic portal", "It feels specific to Summer Place, not like a one-size-fits-all system.", Home],
+];
+
+const futureCards = [
+  ["Seasonal guides", "Storm prep, freeze warnings, pool season, holiday reminders.", CalendarDays],
+  ["Resident feedback", "Simple polls and feedback prompts to understand what residents need.", CircleHelp],
+  ["Local partner network", "Perks from nearby businesses and services.", Store],
+  ["Renewal support", "Helpful reminders and resident appreciation moments near renewal season.", Star],
+  ["Move-out clarity", "A smoother exit process with fewer avoidable charges.", ClipboardCheck],
+  ["Community moments", "Events, spotlights, appreciation days, and property updates.", Users],
+];
+
+const managementTakeaways = [
+  "A stronger resident first impression",
+  "A central place for common information",
+  "A helpful learning hub",
+  "A safe AI concierge concept",
+  "A community/perks layer",
+  "A better way to show residents the care already being put into the property",
+  "A pilot that can start small and grow with feedback",
+];
+
 const pillars = [
   {
     title: "Home",
@@ -250,17 +305,17 @@ const guidePreview = {
   title: "Smoke-Free Living & Odor Respect",
   sections: [
     "Respect the no-smoking addendum",
-    "Why odor travels in apartment buildings",
-    "Protecting renovated units",
-    "Legal medical cannabis basics",
-    "Cleaner, lower-odor options",
-    "Outdoor courtesy",
-    "What to do if smoke odor affects your unit",
+    "Understand how odor travels",
+    "Protect renovated apartments",
+    "Learn legal medical cannabis basics",
+    "Explore cleaner, lower-odor options",
+    "Practice outdoor courtesy",
+    "Report odor concerns without confrontation",
   ],
 };
 
 const guides = [
-  ["Smoke-Free Living & Odor Respect", "A clear guide to expectations, odor respect, and cleaner choices.", ShieldCheck],
+  ["Smoke-Free Living & Odor Respect", "Help residents understand the no-smoking addendum, reduce odor complaints, protect renovated units, and make cleaner, more respectful choices.", ShieldCheck],
   ["Pet Life at Summer Place", "Shared-space expectations for pets, cleanup, and neighbor comfort.", Sparkles],
   ["Trash, Bulk Trash & Clean Community", "Simple disposal steps, timing, and dumpster-area clarity.", ClipboardCheck],
   ["Packages & Deliveries", "Delivery notes, missed packages, and what to check first.", Bell],
@@ -321,19 +376,19 @@ const differentiators = [
 
 const pilotPhases = [
   {
-    title: "Phase 1: Vision Prototype",
-    description: "A polished, clickable concept management can review without disrupting current operations.",
-    items: ["Interactive vision app", "Branded mock screens", "Management review", "Feedback and scope alignment"],
+    title: "Phase 1: Vision Review",
+    description: "A low-risk walkthrough to align on tone, value, and what belongs in a pilot.",
+    items: ["Interactive concept app", "Management walkthrough", "Feedback on tone, features, and content", "Decide what belongs in the pilot"],
   },
   {
-    title: "Phase 2: Pilot Community App",
-    description: "A focused resident layer with staff-approved content and high-value starter experiences.",
-    items: ["Settle In Hub", "Resident Guide starter modules", "Ask Summer knowledge demo", "Community and perks pages", "Staff-approved content"],
+    title: "Phase 2: Pilot Build",
+    description: "A focused resident resource built around approved starter content.",
+    items: ["New Resident Hub", "Resident Guide starter modules", "Ask Summer approved-answer demo", "Community and perks pages", "Basic content update workflow"],
   },
   {
-    title: "Phase 3: Full Resident Experience",
-    description: "A broader resident product that grows only after the pilot proves where it helps.",
-    items: ["Resident accounts", "Approved knowledge base", "Live AI concierge", "Local partner hub", "Analytics and engagement insights", "Seasonal modules and events"],
+    title: "Phase 3: Community App",
+    description: "The full resident experience after the pilot proves where it creates value.",
+    items: ["Resident access", "Approved knowledge base", "AI concierge", "Local partner hub", "Engagement insights", "Seasonal content updates"],
   },
 ];
 
@@ -371,6 +426,8 @@ function App() {
       <TopNav />
       <VisionProgress />
       <Hero />
+      <ExecutiveSummary />
+      <WhyNowSection />
       <ExperienceMode activeExperience={activeExperience} setActiveExperience={setActiveExperience} />
       <ResidentJourneyDemo activeExperience={activeExperience} setActiveExperience={setActiveExperience} />
       <OpportunitySection />
@@ -389,12 +446,17 @@ function App() {
       <ContentLibraryPreview />
       <CommunitySection />
       <ManagementControl />
+      <WhatIsSection />
       <NoDisruptionSection />
       <StaffSection />
       <DifferentSection />
+      <LocalStandoutSection />
+      <FuturePossibilities />
       <PilotSection />
       <WhySection />
+      <ManagementTakeaway />
       <FinalCta />
+      <Footer />
     </main>
   );
 }
@@ -510,6 +572,57 @@ function Hero() {
         </Reveal>
       </div>
     </section>
+  );
+}
+
+function ExecutiveSummary() {
+  return (
+    <Section id="summary" eyebrow="Executive summary" title="The idea in one sentence.">
+      <Glass strong className="p-6 md:p-9">
+        <p className="max-w-5xl text-2xl font-semibold leading-10 text-white md:text-3xl">
+          Give Summer Place residents one mobile-first home base to settle in, understand expectations,
+          ask common questions, explore community updates, and feel more connected to the place they call home.
+        </p>
+        <div className="mt-7 grid gap-4 md:grid-cols-3">
+          {summaryValues.map(([title, copy, Icon]) => (
+            <div key={title} className="rounded-[1.5rem] border border-aqua/15 bg-white/[0.045] p-5">
+              <Icon className="mb-4 h-6 w-6 text-aqua" />
+              <h3 className="text-xl font-semibold text-white">{title}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{copy}</p>
+            </div>
+          ))}
+        </div>
+      </Glass>
+    </Section>
+  );
+}
+
+function WhyNowSection() {
+  return (
+    <Section id="why-now" eyebrow="Why now" title="Why this matters now.">
+      <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+        <Glass className="p-7">
+          <p className="text-lg leading-8 text-slate-200">
+            Summer Place is already being improved physically and operationally. The next opportunity
+            is emotional and experiential: helping residents feel the care being put into the property.
+          </p>
+          <p className="mt-6 text-xl font-semibold leading-8 text-white">
+            When residents feel more guided, they feel more respected. When they feel more respected,
+            the community gets stronger.
+          </p>
+        </Glass>
+        <div className="grid gap-4">
+          {whyNowCards.map(([copy, Icon]) => (
+            <Glass key={copy} className="flex items-center gap-4 p-5">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/20">
+                <Icon className="h-5 w-5 text-aqua" />
+              </div>
+              <p className="text-lg font-semibold text-white">{copy}</p>
+            </Glass>
+          ))}
+        </div>
+      </div>
+    </Section>
   );
 }
 
@@ -793,8 +906,9 @@ function GuideSection({ activeGuide, setActiveGuide }) {
   return (
     <Section id="guide" eyebrow="Resident Guide" title="Helpful guides that quietly create a better community.">
       <p className="mb-7 max-w-3xl text-lg leading-8 text-slate-300">
-        Some issues do not need more warnings. They need better context. The Resident Guide turns
-        common apartment-life friction into clear, respectful education.
+        Many apartment issues are not caused by bad residents. They are caused by unclear expectations,
+        forgotten reminders, and scattered information. The Resident Guide gives residents clear,
+        respectful context before small issues become repeated problems.
       </p>
       <div className="grid gap-6 xl:grid-cols-[1fr_420px]">
         <div className="grid gap-4 md:grid-cols-2">
@@ -834,9 +948,25 @@ function GuideSection({ activeGuide, setActiveGuide }) {
             </p>
           )}
           <p className="mt-6 rounded-lg border border-white/10 bg-white/[0.045] p-4 text-sm leading-6 text-slate-300">
-            Built with real-world insight from over three years in Louisiana medical cannabis and more
+            Example module informed by real-world experience in Louisiana medical cannabis and more
             than 15,000 deliveries, many to apartment communities.
           </p>
+        </Glass>
+        <Glass className="p-5">
+          <h3 className="mb-4 text-xl font-semibold text-white">Designed with boundaries.</h3>
+          <div className="grid gap-3">
+            {[
+              "Answers from approved Summer Place information",
+              "Sends urgent issues back to official channels",
+              "Avoids guessing on account-specific questions",
+              "Points residents to the right guide or contact path",
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-3 rounded-xl bg-white/[0.05] p-3 text-sm text-slate-200">
+                <ShieldCheck className="h-4 w-4 text-aqua" />
+                {item}
+              </div>
+            ))}
+          </div>
         </Glass>
       </div>
     </Section>
@@ -1027,6 +1157,36 @@ function ManagementControl() {
   );
 }
 
+function WhatIsSection() {
+  return (
+    <Section id="definition" eyebrow="Clear definition" title="What this is - and what it is not.">
+      <div className="grid gap-5 lg:grid-cols-2">
+        <DefinitionList title="This is" items={isList} positive />
+        <DefinitionList title="This is not" items={isNotList} />
+      </div>
+      <p className="mt-7 rounded-[1.5rem] border border-aqua/20 bg-white/[0.045] p-5 text-center text-xl font-semibold leading-8 text-white">
+        It fits beside what already works and improves the part residents feel every day.
+      </p>
+    </Section>
+  );
+}
+
+function DefinitionList({ title, items, positive = false }) {
+  return (
+    <Glass strong={positive} className="p-6">
+      <h3 className="mb-5 text-2xl font-semibold text-white">{title}</h3>
+      <div className="grid gap-3">
+        {items.map((item) => (
+          <div key={item} className="flex items-center gap-3 rounded-xl bg-white/[0.055] p-3 text-sm text-slate-200">
+            {positive ? <Check className="h-4 w-4 text-aqua" /> : <X className="h-4 w-4 text-steel" />}
+            {item}
+          </div>
+        ))}
+      </div>
+    </Glass>
+  );
+}
+
 function NoDisruptionSection() {
   return (
     <Section id="fit" eyebrow="No disruption" title="Designed to fit beside what already works.">
@@ -1101,6 +1261,51 @@ function DifferentSection() {
   );
 }
 
+function LocalStandoutSection() {
+  return (
+    <Section id="standout" eyebrow="Local opportunity" title="A chance to stand out locally.">
+      <Glass strong className="p-6 md:p-8">
+        <p className="max-w-4xl text-lg leading-8 text-slate-200">
+          Most apartment communities around here have the same basic resident experience: a portal,
+          a website, texts, and office calls. Summer Place has the opportunity to create something
+          more memorable - a custom community layer residents can actually use.
+        </p>
+        <div className="mt-7 grid gap-4 md:grid-cols-3">
+          {localStandoutCards.map(([title, copy, Icon]) => (
+            <div key={title} className="rounded-[1.5rem] border border-aqua/15 bg-white/[0.045] p-5">
+              <Icon className="mb-4 h-6 w-6 text-aqua" />
+              <h3 className="text-xl font-semibold text-white">{title}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{copy}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-7 text-center text-xl font-semibold text-white">
+          This is how Summer Place can feel different without pretending to be something it is not.
+        </p>
+      </Glass>
+    </Section>
+  );
+}
+
+function FuturePossibilities() {
+  return (
+    <Section id="future" eyebrow="Future possibilities" title="What this could grow into.">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {futureCards.map(([title, copy, Icon]) => (
+          <Glass key={title} className="p-5">
+            <Icon className="mb-5 h-6 w-6 text-aqua" />
+            <h3 className="text-xl font-semibold text-white">{title}</h3>
+            <p className="mt-3 text-sm leading-6 text-slate-300">{copy}</p>
+          </Glass>
+        ))}
+      </div>
+      <p className="mt-7 rounded-[1.5rem] border border-aqua/20 bg-white/[0.045] p-5 text-center text-xl font-semibold text-white">
+        Start with the core experience. Grow only where it creates real value.
+      </p>
+    </Section>
+  );
+}
+
 function PilotSection() {
   return (
     <Section id="pilot" eyebrow="Pilot plan" title="Start focused. Prove the value. Build from there.">
@@ -1129,8 +1334,8 @@ function PilotSection() {
         ))}
       </div>
       <p className="mt-7 rounded-xl border border-white/10 bg-white/[0.05] p-5 text-center text-slate-200">
-        No disruption to existing systems. The app can start as a simple resident layer and grow only
-        where it proves useful.
+        The pilot does not need to disrupt existing systems. It can begin as a simple resident
+        resource and grow from there.
       </p>
     </Section>
   );
@@ -1138,14 +1343,17 @@ function PilotSection() {
 
 function WhySection() {
   return (
-    <Section id="why" eyebrow="Inside perspective" title="Built by someone who sees the opportunity from inside the community.">
+    <Section id="why" eyebrow="Inside perspective" title="Built from inside the community.">
       <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
         <Glass className="p-7">
           <p className="text-lg leading-8 text-slate-200">
-            I live at Summer Place. I see the care being put into the property, and I see the chance
-            to make residents feel that care more clearly. Gent Ascend Collective exists to build
-            practical, useful technology for local businesses and communities - not generic software,
-            but tools that make people feel more guided, connected, and confident.
+            I am not approaching this as an outside software vendor guessing what residents need. I
+            live at Summer Place. I see the improvements being made, the questions residents ask, and
+            the opportunity to help the community feel more guided and connected.
+          </p>
+          <p className="mt-5 text-lg leading-8 text-slate-200">
+            Gent Ascend Collective was created to build practical technology for real local
+            communities - tools that make people feel clearer, more supported, and more confident.
           </p>
         </Glass>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -1156,6 +1364,23 @@ function WhySection() {
           ))}
         </div>
       </div>
+    </Section>
+  );
+}
+
+function ManagementTakeaway() {
+  return (
+    <Section id="takeaway" eyebrow="Management takeaway" title="What Summer Place gets.">
+      <Glass strong className="p-6 md:p-8">
+        <div className="grid gap-3 md:grid-cols-2">
+          {managementTakeaways.map((item) => (
+            <div key={item} className="flex items-center gap-3 rounded-xl bg-white/[0.055] p-4 text-sm font-semibold text-slate-100">
+              <Check className="h-5 w-5 shrink-0 text-aqua" />
+              {item}
+            </div>
+          ))}
+        </div>
+      </Glass>
     </Section>
   );
 }
@@ -1182,9 +1407,24 @@ function FinalCta() {
           <a href="mailto:" className="primary-btn mx-auto mt-9 w-fit">
             Let's Build the Community Layer <ArrowRight className="h-4 w-4" />
           </a>
+          <a href="#pilot" className="secondary-btn mx-auto mt-3 w-fit px-5 py-3">
+            Review the Pilot Plan <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </Reveal>
     </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-aqua/10 px-4 py-8 md:px-6">
+      <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-steel md:flex-row md:items-center md:justify-between">
+        <p className="font-semibold text-slate-200">Summer Place Community Vision</p>
+        <p>Resident experience concept by Gent Ascend Collective</p>
+        <p>Built as a vision prototype for discussion and feedback.</p>
+      </div>
+    </footer>
   );
 }
 
@@ -1232,6 +1472,7 @@ function DashboardPhone() {
             <PhoneCard label="Featured guide" title="Smoke-Free Living & Odor Respect" icon={ShieldCheck} />
             <PhoneCard label="Community" title="Pool Reminder" icon={Waves} />
             <PhoneCard label="Local perk" title="SUMMERPLACE20" icon={Store} />
+            <PhoneBottomNav />
           </div>
         </PhoneFrame>
       </motion.div>
@@ -1267,6 +1508,7 @@ function AppPhone({ pillar }) {
               ))}
             </div>
           )}
+          <PhoneBottomNav />
         </div>
       </PhoneFrame>
     </motion.div>
@@ -1420,7 +1662,11 @@ function PhoneFrame({ children }) {
     <div className="phone-frame p-3">
       <div className="relative overflow-hidden rounded-[1.55rem] border border-white/10 bg-gradient-to-b from-harbor to-midnight">
         <div className="pointer-events-none absolute inset-x-6 top-0 h-28 rounded-full bg-white/10 blur-2xl" />
-        <div className="mx-auto mt-3 h-1.5 w-20 rounded-full bg-white/20" />
+        <div className="relative flex items-center justify-between px-5 pt-3 text-[10px] font-semibold text-slate-300">
+          <span>9:41</span>
+          <div className="h-1.5 w-20 rounded-full bg-white/20" />
+          <span>LTE</span>
+        </div>
         {children}
       </div>
     </div>
