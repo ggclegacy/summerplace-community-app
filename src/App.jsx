@@ -50,29 +50,35 @@ const opportunityCards = [
   },
 ];
 
+const apartmentTools = ["Rent portal", "Maintenance form", "Mass text", "Website"];
+
 const pillars = [
   {
     title: "Home",
     icon: Home,
     description: "A calm dashboard for daily resident life, reminders, guides, quick actions, and local connection.",
+    microcopy: "Daily clarity",
     items: ["Welcome home", "Today's guide", "Quick actions", "Community update", "Local perk"],
   },
   {
     title: "Settle In",
     icon: KeyRound,
     description: "A guided onboarding hub for the first day, first week, and first month at Summer Place.",
+    microcopy: "Move-in confidence",
     items: ["First 24 hours", "First 7 days", "Utilities", "Parking", "Packages", "Maintenance portal"],
   },
   {
     title: "Resident Guide",
     icon: ClipboardCheck,
     description: "Resident-friendly education that explains expectations without feeling like a rule packet.",
+    microcopy: "Education without friction",
     items: ["Smoke-Free Living", "Pet Life", "Trash & Bulk Trash", "Apartment Care", "Storm Prep"],
   },
   {
     title: "Ask Summer",
     icon: MessageCircle,
     description: "A property-specific concierge for common questions, approved answers, and suggested guide links.",
+    microcopy: "Answers before the call",
     items: ["Can I smoke inside?", "No smoking is permitted inside apartments.", "Suggested guide: Smoke-Free Living"],
     chat: true,
   },
@@ -80,12 +86,14 @@ const pillars = [
     title: "Community",
     icon: Users,
     description: "Events, updates, appreciation moments, staff spotlights, and property progress residents can revisit.",
+    microcopy: "Connection between announcements",
     items: ["Resident Appreciation Weekend", "Pool Reminder", "Property Upgrade Update", "Staff Spotlight"],
   },
   {
     title: "Local Perks",
     icon: Store,
     description: "A simple local partner layer that connects residents with nearby offers and useful services.",
+    microcopy: "Local value, lightly placed",
     items: ["Groomed Gent Co. SUMMERPLACE20", "Local food", "Pet services", "Cleaning help", "Wellness partners"],
   },
 ];
@@ -185,20 +193,24 @@ const differentiators = [
 const pilotPhases = [
   {
     title: "Phase 1: Vision Prototype",
+    description: "A polished, clickable concept management can review without disrupting current operations.",
     items: ["Interactive vision app", "Branded mock screens", "Management review", "Feedback and scope alignment"],
   },
   {
     title: "Phase 2: Pilot Community App",
+    description: "A focused resident layer with staff-approved content and high-value starter experiences.",
     items: ["Settle In Hub", "Resident Guide starter modules", "Ask Summer knowledge demo", "Community and perks pages", "Staff-approved content"],
   },
   {
     title: "Phase 3: Full Resident Experience",
+    description: "A broader resident product that grows only after the pilot proves where it helps.",
     items: ["Resident accounts", "Approved knowledge base", "Live AI concierge", "Local partner hub", "Analytics and engagement insights", "Seasonal modules and events"],
   },
 ];
 
 const credibility = [
   "Current Summer Place resident",
+  "Founder of Gent Ascend Collective",
   "Founder of Groomed Gent Co.",
   "10+ years customer service and operations",
   "Restaurant operations leadership",
@@ -298,13 +310,19 @@ function Hero() {
         <Reveal>
           <div className="max-w-3xl">
             <div className="mb-7 flex items-center gap-4">
-              <img src="/logo.png" alt="Summer Place Apartments logo" className="h-24 w-24 rounded-full bg-white/8 object-contain p-2 shadow-glow ring-1 ring-white/15" />
+              <motion.div
+                className="premium-glass-strong grid h-28 w-28 place-items-center rounded-[2rem] p-3 shadow-glow"
+                animate={{ boxShadow: ["0 20px 70px rgba(168,216,234,0.14)", "0 28px 90px rgba(168,216,234,0.26)", "0 20px 70px rgba(168,216,234,0.14)"] }}
+                transition={{ duration: 4.8, repeat: Infinity }}
+              >
+                <img src="/logo.png" alt="Summer Place Apartments logo" className="h-full w-full rounded-full object-contain" />
+              </motion.div>
               <div className="rounded-full border border-aqua/30 bg-aqua/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-aqua">
                 Resident Experience Concept
               </div>
             </div>
             <p className="mb-5 text-sm text-steel">A resident experience concept by Gent Ascend Collective.</p>
-            <h1 className="text-5xl font-semibold leading-[1.02] text-white md:text-7xl">
+            <h1 className="metallic-text text-5xl font-semibold leading-[1.02] md:text-7xl">
               A custom community app for the next chapter of Summer Place.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">
@@ -313,6 +331,10 @@ function Hero() {
             </p>
             <p className="mt-5 max-w-xl text-base leading-7 text-steel">
               The app turns property care into something residents can actually feel.
+            </p>
+            <p className="mt-4 max-w-2xl rounded-2xl border border-aqua/20 bg-white/[0.045] p-4 text-sm leading-6 text-slate-300 backdrop-blur">
+              Built as the resident experience layer - not another rent portal, maintenance portal,
+              or mass texting tool.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a href="#opportunity" className="primary-btn">Explore the Vision <ArrowRight className="h-4 w-4" /></a>
@@ -331,19 +353,36 @@ function Hero() {
 function OpportunitySection() {
   return (
     <Section id="opportunity" eyebrow="The opportunity" title="Summer Place can build something different.">
-      <div className="grid gap-6 lg:grid-cols-[1fr_1.05fr]">
-        <Glass className="p-7 md:p-9">
-          <p className="text-lg leading-8 text-slate-200">
-            Most apartment communities have the same basic tools: rent portals, maintenance forms,
-            mass texts, and a website. Those systems matter - but they do not create community by
-            themselves. The opportunity is to give Summer Place something residents can actually use,
-            feel, and return to.
+      <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+        <Glass strong className="p-6 md:p-8">
+          <p className="max-w-2xl text-lg leading-8 text-slate-200">
+            Most apartment communities have the same basic tools. Those systems matter - but they do
+            not create community by themselves.
           </p>
+          <div className="mt-7 grid gap-3 sm:grid-cols-2">
+            {apartmentTools.map((tool) => (
+              <div key={tool} className="rounded-2xl border border-white/10 bg-white/[0.055] p-4 text-sm font-semibold text-slate-200">
+                {tool}
+              </div>
+            ))}
+          </div>
+          <div className="my-7 flex items-center gap-4">
+            <div className="h-px flex-1 bg-aqua/20" />
+            <ArrowRight className="h-5 w-5 text-aqua" />
+            <div className="h-px flex-1 bg-aqua/20" />
+          </div>
+          <div className="rounded-[1.75rem] border border-aqua/30 bg-gradient-to-br from-harbor/35 to-deepblue/60 p-6 shadow-glow">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-aqua">Summer Place Community App</p>
+            <h3 className="mt-2 text-3xl font-semibold text-white">Resident Experience Layer</h3>
+            <p className="mt-4 leading-7 text-slate-200">
+              The opportunity is to give Summer Place something residents can actually use, feel, and return to.
+            </p>
+          </div>
         </Glass>
         <div className="grid gap-4">
           {opportunityCards.map(({ title, copy, icon: Icon }) => (
             <Glass key={title} className="flex gap-4 p-5">
-              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-aqua/12 ring-1 ring-aqua/20">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/20">
                 <Icon className="h-5 w-5 text-aqua" />
               </div>
               <div>
@@ -406,17 +445,21 @@ function PillarsSection({ activePillar, setActivePillar }) {
       <div className="grid gap-8 xl:grid-cols-[1fr_430px] xl:items-center">
         <div className="grid gap-3 md:grid-cols-2">
           {pillars.map((pillar) => (
-            <button
+            <motion.button
               key={pillar.title}
               onClick={() => setActivePillar(pillar)}
-              className={`glass-card min-h-44 p-5 text-left transition hover:-translate-y-1 ${
-                activePillar.title === pillar.title ? "ring-1 ring-aqua/70 bg-aqua/[0.09]" : "hover:bg-white/[0.09]"
+              whileHover={{ y: -6, rotateX: 1.5 }}
+              className={`curved-glass-card min-h-48 p-5 text-left ${
+                activePillar.title === pillar.title ? "ring-1 ring-aqua/70 bg-aqua/[0.1] blue-glow" : ""
               }`}
             >
-              <pillar.icon className="mb-5 h-6 w-6 text-aqua" />
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/20">
+                <pillar.icon className="h-6 w-6 text-aqua" />
+              </div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-steel">{pillar.microcopy}</p>
               <h3 className="text-xl font-semibold text-white">{pillar.title}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-300">{pillar.description}</p>
-            </button>
+            </motion.button>
           ))}
         </div>
         <AppPhone pillar={activePillar} />
@@ -428,17 +471,19 @@ function PillarsSection({ activePillar, setActivePillar }) {
 function JourneySection({ activeStep, setActiveStep, progress }) {
   return (
     <Section id="journey" eyebrow="New resident journey" title="From move-in confusion to guided confidence.">
-      <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <Glass className="p-5 md:p-7">
-          <div className="space-y-4">
+      <div className="grid gap-6">
+        <Glass strong className="p-5 md:p-7">
+          <div className="grid gap-4 lg:grid-cols-5">
             {timeline.map(([title, copy], index) => (
-              <button
+              <motion.button
                 key={title}
                 onClick={() => setActiveStep(index)}
-                className={`flex w-full gap-4 rounded-xl border p-4 text-left transition ${
+                whileHover={{ y: -4 }}
+                className={`relative flex w-full gap-4 rounded-[1.4rem] border p-4 text-left transition ${
                   activeStep === index ? "border-aqua/60 bg-aqua/10" : "border-white/10 bg-white/[0.035] hover:bg-white/[0.08]"
                 }`}
               >
+                {index < timeline.length - 1 && <span className="absolute left-10 top-full hidden h-px w-[calc(100%-1rem)] bg-aqua/20 lg:left-[calc(100%-0.5rem)] lg:top-1/2 lg:block" />}
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/10 text-sm font-bold text-aqua">
                   {index + 1}
                 </span>
@@ -446,7 +491,7 @@ function JourneySection({ activeStep, setActiveStep, progress }) {
                   <span className="block font-semibold text-white">{title}</span>
                   <span className="mt-1 block text-sm leading-6 text-slate-300">{copy}</span>
                 </span>
-              </button>
+              </motion.button>
             ))}
           </div>
         </Glass>
@@ -487,20 +532,23 @@ function GuideSection({ activeGuide, setActiveGuide }) {
       <div className="grid gap-6 xl:grid-cols-[1fr_420px]">
         <div className="grid gap-4 md:grid-cols-2">
           {guides.map(([title, copy, Icon]) => (
-            <button
+            <motion.button
               key={title}
               onClick={() => setActiveGuide(title)}
-              className={`glass-card p-5 text-left transition hover:-translate-y-1 ${
+              whileHover={{ y: -5 }}
+              className={`curved-glass-card p-5 text-left ${
                 activeGuide === title ? "ring-1 ring-aqua/65 bg-aqua/[0.08]" : "hover:bg-white/[0.08]"
               }`}
             >
-              <Icon className="mb-5 h-6 w-6 text-aqua" />
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/20">
+                <Icon className="h-6 w-6 text-aqua" />
+              </div>
               <h3 className="text-lg font-semibold text-white">{title}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-300">{copy}</p>
-            </button>
+            </motion.button>
           ))}
         </div>
-        <Glass className="p-6">
+        <Glass strong className="p-6">
           <p className="text-sm font-semibold text-aqua">Expanded preview</p>
           <h3 className="mt-2 text-2xl font-semibold text-white">{activeGuide}</h3>
           {activeGuide === guidePreview.title ? (
@@ -536,12 +584,12 @@ function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) 
         questions, points residents to the right guide, and knows when to tell them to contact the office.
       </p>
       <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="grid gap-3">
+        <div className="flex flex-wrap content-start gap-3">
           {Object.keys(askQuestions).map((question) => (
             <button
               key={question}
               onClick={() => setActiveQuestion(question)}
-              className={`rounded-xl border p-4 text-left text-sm font-semibold transition ${
+              className={`rounded-full border px-4 py-3 text-left text-sm font-semibold transition ${
                 question === activeQuestion ? "border-aqua/70 bg-aqua/10 text-white" : "border-white/10 bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]"
               }`}
             >
@@ -549,9 +597,9 @@ function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) 
             </button>
           ))}
         </div>
-        <Glass className="p-5 md:p-7">
+        <Glass strong className="p-5 md:p-7">
           <div className="mb-5 flex items-center gap-3">
-            <div className="grid h-12 w-12 place-items-center rounded-full bg-aqua/15 ring-1 ring-aqua/20">
+            <div className="grid h-14 w-14 place-items-center rounded-full bg-aqua/15 shadow-glow ring-1 ring-aqua/25">
               <MessageCircle className="h-5 w-5 text-aqua" />
             </div>
             <div>
@@ -567,11 +615,15 @@ function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) 
               {isTyping ? <TypingDots /> : askAnswer.answer}
             </div>
             {!isTyping && (
-              <button className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white">
+              <button className="secondary-btn w-fit px-4 py-2">
                 Open {askAnswer.guide} <ArrowRight className="h-4 w-4" />
               </button>
             )}
           </div>
+          <p className="mt-4 text-xs leading-5 text-steel">
+            For urgent, account-specific, or emergency issues, residents are guided to contact the
+            office or official support channels.
+          </p>
         </Glass>
       </div>
     </Section>
@@ -655,6 +707,10 @@ function PilotSection() {
                 {index + 1}
               </span>
             </div>
+            <p className="mb-5 text-sm leading-6 text-slate-300">{phase.description}</p>
+            <div className="mb-5 h-1.5 rounded-full bg-white/10">
+              <div className="h-full rounded-full bg-aqua" style={{ width: `${(index + 1) * 28}%` }} />
+            </div>
             <div className="space-y-3">
               {phase.items.map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-lg bg-white/[0.05] p-3">
@@ -681,9 +737,9 @@ function WhySection() {
         <Glass className="p-7">
           <p className="text-lg leading-8 text-slate-200">
             I live at Summer Place. I see the care being put into the property, and I see the chance
-            to make residents feel that care more clearly. This concept is built as practical, useful
-            technology for a real local community - not generic software, but a tool that makes people
-            feel more guided, connected, and confident.
+            to make residents feel that care more clearly. Gent Ascend Collective exists to build
+            practical, useful technology for local businesses and communities - not generic software,
+            but tools that make people feel more guided, connected, and confident.
           </p>
         </Glass>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -703,9 +759,11 @@ function FinalCta() {
     <section id="final" className="relative px-4 py-24 md:px-6">
       <BackgroundDetails compact />
       <Reveal>
-        <div className="mx-auto max-w-5xl rounded-2xl border border-aqua/20 bg-gradient-to-br from-harbor/75 to-graphite/75 p-8 text-center shadow-glow backdrop-blur md:p-14">
-          <img src="/logo.png" alt="" className="mx-auto mb-7 h-20 w-20 rounded-full object-contain ring-1 ring-white/15" />
-          <h2 className="text-4xl font-semibold leading-tight text-white md:text-6xl">
+        <div className="premium-glass-strong mx-auto max-w-5xl p-8 text-center md:p-14">
+          <div className="premium-glass mx-auto mb-7 grid h-24 w-24 place-items-center rounded-[1.8rem] p-3">
+            <img src="/logo.png" alt="" className="h-full w-full rounded-full object-contain" />
+          </div>
+          <h2 className="metallic-text text-4xl font-semibold leading-tight md:text-6xl">
             Summer Place already has the property, the systems, and the team.
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-xl leading-8 text-slate-200">
@@ -726,35 +784,52 @@ function FinalCta() {
 
 function DashboardPhone() {
   return (
-    <motion.div className="phone-shell mx-auto lg:ml-auto" animate={{ y: [0, -10, 0] }} transition={{ duration: 6, repeat: Infinity }}>
-      <PhoneFrame>
-        <div className="p-5">
-          <div className="mb-5 flex items-center justify-between">
-            <div>
-              <p className="text-xs text-aqua">Summer Place</p>
-              <h3 className="text-2xl font-semibold text-white">Welcome home</h3>
-            </div>
-            <img src="/logo.png" alt="" className="h-12 w-12 rounded-full object-contain" />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            {[
-              ["Ask Summer", MessageCircle],
-              ["Settle In", KeyRound],
-              ["Resident Guide", ClipboardCheck],
-              ["Perks", Store],
-            ].map(([label, Icon]) => (
-              <div key={label} className="rounded-xl bg-white/[0.07] p-3">
-                <Icon className="mb-3 h-5 w-5 text-aqua" />
-                <p className="text-sm font-semibold text-white">{label}</p>
+    <div className="relative mx-auto w-full max-w-[430px] lg:ml-auto">
+      {[
+        ["Ask Summer", MessageCircle, "left-0 top-16"],
+        ["Settle In", KeyRound, "right-0 top-28"],
+        ["Perks", Store, "bottom-20 left-2"],
+      ].map(([label, Icon, position], index) => (
+        <motion.div
+          key={label}
+          className={`premium-glass absolute z-20 hidden items-center gap-2 px-4 py-3 text-sm font-semibold text-white lg:flex ${position}`}
+          animate={{ y: [0, index % 2 ? 8 : -8, 0] }}
+          transition={{ duration: 5 + index, repeat: Infinity }}
+        >
+          <Icon className="h-4 w-4 text-aqua" />
+          {label}
+        </motion.div>
+      ))}
+      <motion.div className="phone-shell mx-auto" animate={{ y: [0, -10, 0] }} transition={{ duration: 6, repeat: Infinity }}>
+        <PhoneFrame>
+          <div className="p-5">
+            <div className="mb-5 flex items-center justify-between">
+              <div>
+                <p className="text-xs text-aqua">Summer Place</p>
+                <h3 className="text-2xl font-semibold text-white">Welcome home</h3>
               </div>
-            ))}
+              <img src="/logo.png" alt="" className="h-12 w-12 rounded-full object-contain" />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                ["Ask Summer", MessageCircle],
+                ["Settle In", KeyRound],
+                ["Resident Guide", ClipboardCheck],
+                ["Perks", Store],
+              ].map(([label, Icon]) => (
+                <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.07] p-3">
+                  <Icon className="mb-3 h-5 w-5 text-aqua" />
+                  <p className="text-sm font-semibold text-white">{label}</p>
+                </div>
+              ))}
+            </div>
+            <PhoneCard label="Featured guide" title="Smoke-Free Living & Odor Respect" icon={ShieldCheck} />
+            <PhoneCard label="Community" title="Pool Reminder" icon={Waves} />
+            <PhoneCard label="Local perk" title="SUMMERPLACE20" icon={Store} />
           </div>
-          <PhoneCard label="Featured guide" title="Smoke-Free Living & Odor Respect" icon={ShieldCheck} />
-          <PhoneCard label="Community" title="Pool Reminder" icon={Waves} />
-          <PhoneCard label="Local perk" title="SUMMERPLACE20" icon={Store} />
-        </div>
-      </PhoneFrame>
-    </motion.div>
+        </PhoneFrame>
+      </motion.div>
+    </div>
   );
 }
 
@@ -794,8 +869,9 @@ function AppPhone({ pillar }) {
 
 function PhoneFrame({ children }) {
   return (
-    <div className="rounded-[2rem] border border-white/20 bg-[#102838] p-3 shadow-glow">
-      <div className="overflow-hidden rounded-[1.55rem] border border-white/10 bg-gradient-to-b from-harbor to-midnight">
+    <div className="phone-frame p-3">
+      <div className="relative overflow-hidden rounded-[1.55rem] border border-white/10 bg-gradient-to-b from-harbor to-midnight">
+        <div className="pointer-events-none absolute inset-x-6 top-0 h-28 rounded-full bg-white/10 blur-2xl" />
         <div className="mx-auto mt-3 h-1.5 w-20 rounded-full bg-white/20" />
         {children}
       </div>
@@ -853,11 +929,12 @@ function BackgroundDetails({ compact = false }) {
 
 function Section({ id, eyebrow, title, children }) {
   return (
-    <section id={id} className="relative px-4 py-20 md:px-6 md:py-28">
+    <section id={id} className="section-shell relative px-4 py-20 md:px-6 md:py-28">
+      <BackgroundDetails compact />
       <Reveal>
         <div className="mx-auto max-w-7xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-aqua">{eyebrow}</p>
-          <h2 className="mb-8 max-w-4xl text-4xl font-semibold leading-tight text-white md:text-5xl">{title}</h2>
+          <h2 className="metallic-text mb-8 max-w-4xl text-4xl font-semibold leading-tight md:text-5xl">{title}</h2>
           {children}
         </div>
       </Reveal>
@@ -865,8 +942,16 @@ function Section({ id, eyebrow, title, children }) {
   );
 }
 
-function Glass({ className = "", children }) {
-  return <div className={`glass-card ${className}`}>{children}</div>;
+function Glass({ className = "", children, strong = false }) {
+  return (
+    <motion.div
+      className={`${strong ? "premium-glass-strong" : "curved-glass-card"} ${className}`}
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
+  );
 }
 
 function Reveal({ children, delay = 0 }) {
