@@ -5,7 +5,7 @@
 :root {
   color-scheme: dark;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  background: #071B2A;
+  background: #07131C;
   scroll-behavior: smooth;
 }
 
@@ -13,10 +13,11 @@ body {
   margin: 0;
   position: relative;
   background:
-    radial-gradient(circle at 12% 18%, rgba(23, 107, 147, 0.22), transparent 28rem),
-    radial-gradient(circle at 88% 58%, rgba(154, 166, 175, 0.15), transparent 28rem),
-    linear-gradient(180deg, rgba(7, 27, 42, 0), rgba(7, 27, 42, 0.94) 34rem),
-    #071B2A;
+    radial-gradient(circle at 16% 14%, rgba(0, 75, 104, 0.11), transparent 28rem),
+    radial-gradient(circle at 84% 46%, rgba(215, 222, 226, 0.08), transparent 30rem),
+    radial-gradient(circle at 50% 82%, rgba(58, 68, 75, 0.22), transparent 36rem),
+    linear-gradient(180deg, rgba(7, 19, 28, 0), rgba(7, 19, 28, 0.96) 34rem),
+    #07131C;
 }
 
 * {
@@ -28,17 +29,19 @@ body {
   .premium-glass-strong,
   .curved-glass-card,
   .glass-card {
-    @apply border bg-white/[0.08] shadow-glass backdrop-blur-xl;
+    @apply border shadow-glass backdrop-blur-xl;
     position: relative;
     overflow: hidden;
-    border-color: rgba(168, 216, 234, 0.22);
+    background-color: rgba(215, 222, 226, 0.08);
+    border-color: rgba(215, 222, 226, 0.22);
     border-radius: 30px;
     background-image:
-      linear-gradient(135deg, rgba(245,248,250,0.12), rgba(167,176,181,0.035)),
-      linear-gradient(180deg, rgba(0,120,168,0.07), rgba(47,54,58,0.035));
+      linear-gradient(135deg, rgba(215,222,226,0.13), rgba(159,170,176,0.035)),
+      linear-gradient(180deg, rgba(58,68,75,0.11), rgba(26,35,42,0.05));
     box-shadow:
       inset 0 1px 0 rgba(245, 248, 250, 0.12),
-      0 24px 70px rgba(7, 27, 42, 0.38);
+      inset 0 -1px 0 rgba(58, 68, 75, 0.28),
+      0 24px 70px rgba(7, 19, 28, 0.42);
   }
 
   .premium-glass::before,
@@ -47,7 +50,7 @@ body {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(115deg, transparent 0 36%, rgba(245,248,250,0.12) 48%, transparent 60% 100%);
+    background: linear-gradient(115deg, transparent 0 36%, rgba(215,222,226,0.16) 48%, transparent 60% 100%);
     opacity: 0;
     transform: translateX(-30%);
     transition: opacity 280ms ease, transform 520ms ease;
@@ -60,10 +63,11 @@ body {
   }
 
   .premium-glass-strong {
+    background-color: rgba(215, 222, 226, 0.13);
     background-image:
-      linear-gradient(135deg, rgba(245,248,250,0.16), rgba(168,216,234,0.05)),
-      linear-gradient(155deg, rgba(0,120,168,0.18), rgba(10,31,48,0.78));
-    border-color: rgba(168, 216, 234, 0.32);
+      linear-gradient(135deg, rgba(215,222,226,0.17), rgba(159,170,176,0.055)),
+      linear-gradient(155deg, rgba(58,68,75,0.3), rgba(16,24,32,0.8));
+    border-color: rgba(215, 222, 226, 0.26);
   }
 
   .curved-glass-card {
@@ -71,22 +75,22 @@ body {
   }
 
   .steel-border {
-    border-color: rgba(168, 216, 234, 0.22);
+    border-color: rgba(215, 222, 226, 0.22);
   }
 
   .blue-glow {
-    box-shadow: 0 24px 80px rgba(168, 216, 234, 0.2);
+    box-shadow: 0 24px 80px rgba(0, 111, 152, 0.14);
   }
 
   .soft-orb {
     border-radius: 999px;
-    background: radial-gradient(circle, rgba(168,216,234,0.2), transparent 68%);
+    background: radial-gradient(circle, rgba(215,222,226,0.14), transparent 68%);
     filter: blur(8px);
   }
 
   .metallic-text {
     @apply text-transparent bg-clip-text;
-    background-image: linear-gradient(135deg, #F5F8FA 0%, #A8D8EA 42%, #A7B0B5 100%);
+    background-image: linear-gradient(135deg, #F5F8FA 0%, #D7DEE2 45%, #9FAAB0 100%);
   }
 
   .section-shell {
@@ -96,13 +100,13 @@ body {
 
   .phone-frame {
     border-radius: 2rem;
-    border: 1px solid rgba(168, 216, 234, 0.24);
+    border: 1px solid rgba(215, 222, 226, 0.26);
     background:
-      linear-gradient(145deg, rgba(245,248,250,0.09), rgba(47,54,58,0.08)),
-      #102838;
+      linear-gradient(145deg, rgba(215,222,226,0.11), rgba(58,68,75,0.11)),
+      #101820;
     box-shadow:
       inset 0 1px 0 rgba(245,248,250,0.14),
-      0 36px 90px rgba(7,27,42,0.48);
+      0 36px 90px rgba(7,19,28,0.54);
   }
 
   .futuristic-button {
@@ -112,8 +116,8 @@ body {
 
   .primary-btn {
     @apply futuristic-button inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5;
-    background: linear-gradient(135deg, #0078A8, #005F86 48%, #003F5F);
-    border: 1px solid rgba(169, 220, 235, 0.34);
+    background: linear-gradient(135deg, #004B68, #006F98);
+    border: 1px solid rgba(215, 222, 226, 0.22);
   }
 
   .primary-btn::after,
@@ -133,7 +137,7 @@ body {
 
   .secondary-btn {
     @apply futuristic-button inline-flex items-center justify-center gap-2 rounded-full border bg-white/[0.06] px-6 py-3 text-sm font-bold text-frost backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/[0.11];
-    border-color: rgba(168, 216, 234, 0.24);
+    border-color: rgba(215, 222, 226, 0.24);
   }
 }
 
@@ -141,10 +145,10 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 18% 22%, rgba(31, 126, 169, 0.26), transparent 28%),
-    radial-gradient(circle at 82% 32%, rgba(203, 216, 226, 0.16), transparent 26%),
-    radial-gradient(circle at 68% 78%, rgba(23, 107, 147, 0.34), transparent 34%),
-    linear-gradient(135deg, #071B2A 0%, #0A1F30 30%, #003F5F 62%, #2F363A 100%);
+    radial-gradient(circle at 70% 46%, rgba(0, 75, 104, 0.18), transparent 26%),
+    radial-gradient(circle at 16% 18%, rgba(215, 222, 226, 0.08), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(159, 170, 176, 0.08), transparent 24%),
+    linear-gradient(135deg, #07131C 0%, #101820 42%, #1A232A 72%, #27323A 100%);
 }
 
 .hero-bg::after,
@@ -156,7 +160,7 @@ body::before {
   opacity: 0.12;
   background-image:
     linear-gradient(135deg, rgba(245,248,250,0.08) 0 1px, transparent 1px 18px),
-    linear-gradient(45deg, rgba(168,216,234,0.06) 0 1px, transparent 1px 22px);
+    linear-gradient(45deg, rgba(159,170,176,0.045) 0 1px, transparent 1px 22px);
   mix-blend-mode: screen;
 }
 
@@ -164,8 +168,8 @@ body::before {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(169,220,235,0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(169,220,235,0.045) 1px, transparent 1px);
+    linear-gradient(rgba(159,170,176,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(159,170,176,0.035) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at 50% 35%, black, transparent 72%);
   opacity: 0.48;
@@ -177,8 +181,8 @@ body::before {
   height: 7rem;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 1.6rem;
-  background: linear-gradient(135deg, rgba(247,251,255,0.11), rgba(154,166,175,0.035));
-  box-shadow: 0 24px 80px rgba(6,26,42,0.26);
+  background: linear-gradient(135deg, rgba(215,222,226,0.11), rgba(58,68,75,0.055));
+  box-shadow: 0 24px 80px rgba(7,19,28,0.28);
   backdrop-filter: blur(18px);
 }
 
@@ -187,9 +191,9 @@ body::before {
   inset: 0;
   opacity: 0.55;
   background:
-    linear-gradient(115deg, transparent 0 18%, rgba(169,220,235,0.16) 18.2%, transparent 18.7% 100%),
-    linear-gradient(45deg, transparent 0 36%, rgba(154,166,175,0.16) 36.2%, transparent 36.7% 100%),
-    linear-gradient(160deg, transparent 0 56%, rgba(31,126,169,0.14) 56.2%, transparent 56.7% 100%);
+    linear-gradient(115deg, transparent 0 18%, rgba(159,170,176,0.11) 18.2%, transparent 18.7% 100%),
+    linear-gradient(45deg, transparent 0 36%, rgba(215,222,226,0.09) 36.2%, transparent 36.7% 100%),
+    linear-gradient(160deg, transparent 0 56%, rgba(0,75,104,0.08) 56.2%, transparent 56.7% 100%);
 }
 
 .node-field span {
@@ -197,15 +201,15 @@ body::before {
   width: 7px;
   height: 7px;
   border-radius: 999px;
-  background: rgba(169, 220, 235, 0.72);
-  box-shadow: 0 0 24px rgba(169, 220, 235, 0.48);
+  background: rgba(215, 222, 226, 0.58);
+  box-shadow: 0 0 20px rgba(168, 216, 234, 0.24);
 }
 
 .phone-shell {
   position: relative;
   width: 100%;
   max-width: 380px;
-  filter: drop-shadow(0 34px 60px rgba(7, 27, 42, 0.5));
+  filter: drop-shadow(0 34px 60px rgba(7, 19, 28, 0.56));
 }
 
 .phone-shell::before {
@@ -214,7 +218,7 @@ body::before {
   inset: 8% -8% 9% auto;
   width: 42%;
   border-radius: 999px;
-  background: rgba(169, 220, 235, 0.16);
+  background: rgba(0, 75, 104, 0.14);
   filter: blur(42px);
 }
 
@@ -225,7 +229,7 @@ section::before {
   width: 18rem;
   height: 18rem;
   border-radius: 999px;
-  background: rgba(169, 220, 235, 0.075);
+  background: rgba(215, 222, 226, 0.052);
   filter: blur(60px);
   pointer-events: none;
 }

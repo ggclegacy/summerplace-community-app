@@ -4,20 +4,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        midnight: "#071B2A",
-        harbor: "#0078A8",
-        steel: "#A7B0B5",
-        graphite: "#414A50",
+        midnight: "#07131C",
+        harbor: "#006F98",
+        steel: "#9FAAB0",
+        graphite: "#27323A",
         frost: "#F5F8FA",
-        aqua: "#A8D8EA",
-        deepnavy: "#0A1F30",
-        ocean: "#005F86",
-        deepblue: "#003F5F",
-        darkgraphite: "#2F363A",
+        aqua: "#B5C0C6",
+        deepnavy: "#101820",
+        ocean: "#006F98",
+        deepblue: "#004B68",
+        darkgraphite: "#1A232A",
+        silver: "#D7DEE2",
+        gunmetal: "#3A444B",
       },
       boxShadow: {
-        glow: "0 24px 80px rgba(168, 216, 234, 0.2)",
-        glass: "0 24px 70px rgba(7, 27, 42, 0.38)",
+        glow: "0 24px 80px rgba(168, 216, 234, 0.13)",
+        glass: "0 24px 70px rgba(7, 19, 28, 0.42)",
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],

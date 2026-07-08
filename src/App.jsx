@@ -476,7 +476,7 @@ function TopNav() {
               {label}
             </a>
           ))}
-          <a href="#final" className="ml-2 rounded-full border border-aqua/35 bg-harbor px-4 py-2 text-xs font-bold text-white shadow-glow transition hover:bg-[#1f7ea9]">
+          <a href="#final" className="ml-2 rounded-full border border-silver/25 bg-harbor px-4 py-2 text-xs font-bold text-white shadow-glow transition hover:bg-ocean">
             Build the Community Layer
           </a>
         </div>
@@ -492,7 +492,7 @@ function TopNav() {
                 {label}
               </a>
             ))}
-            <a href="#final" onClick={() => setOpen(false)} className="mt-2 rounded-full border border-aqua/35 bg-harbor px-4 py-3 text-center text-sm font-bold text-white">
+            <a href="#final" onClick={() => setOpen(false)} className="mt-2 rounded-full border border-silver/25 bg-harbor px-4 py-3 text-center text-sm font-bold text-white">
               Build the Community Layer
             </a>
           </div>
@@ -518,7 +518,7 @@ function VisionProgress() {
         {items.map(([label, id]) => (
           <a key={id} href={`#${id}`} className="group flex items-center justify-end gap-2 text-xs font-semibold text-steel">
             <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 transition-all group-hover:max-w-28 group-hover:opacity-100">{label}</span>
-            <span className="h-2.5 w-2.5 rounded-full border border-aqua/35 bg-aqua/25 shadow-glow" />
+            <span className="h-2.5 w-2.5 rounded-full border border-silver/35 bg-silver/25 shadow-glow" />
           </a>
         ))}
       </div>
@@ -542,7 +542,7 @@ function Hero() {
               >
                 <img src="/logo.png" alt="Summer Place Apartments logo" className="h-full w-full rounded-full object-contain" />
               </motion.div>
-              <div className="rounded-full border border-aqua/30 bg-aqua/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-aqua">
+              <div className="rounded-full border border-silver/25 bg-silver/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-silver shadow-[inset_0_-1px_0_rgba(0,111,152,0.45)]">
                 Resident Experience Concept
               </div>
             </div>
@@ -640,7 +640,7 @@ function ExperienceMode({ activeExperience, setActiveExperience }) {
             onClick={() => setActiveExperience(id)}
             whileHover={{ y: -7 }}
             className={`curved-glass-card min-h-64 p-6 text-left ${
-              activeExperience === id ? "bg-aqua/[0.1] ring-1 ring-aqua/70 blue-glow" : ""
+              activeExperience === id ? "bg-harbor/[0.12] ring-1 ring-harbor/60 blue-glow" : ""
             }`}
           >
             <div className="mb-8 grid h-14 w-14 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/25">
@@ -668,7 +668,7 @@ function ResidentJourneyDemo({ activeExperience, setActiveExperience }) {
             key={id}
             onClick={() => setActiveExperience(id)}
             className={`shrink-0 rounded-full border px-4 py-2 text-sm font-semibold ${
-              activeExperience === id ? "border-aqua/60 bg-aqua/12 text-white" : "border-white/10 bg-white/[0.04] text-slate-300"
+              activeExperience === id ? "border-harbor/60 bg-harbor/15 text-white" : "border-white/10 bg-white/[0.04] text-slate-300"
             }`}
           >
             {title}
@@ -726,8 +726,8 @@ function OpportunitySection() {
             <ArrowRight className="h-5 w-5 text-aqua" />
             <div className="h-px flex-1 bg-aqua/20" />
           </div>
-          <div className="rounded-[1.75rem] border border-aqua/30 bg-gradient-to-br from-harbor/35 to-deepblue/60 p-6 shadow-glow">
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-aqua">Summer Place Community App</p>
+          <div className="rounded-[1.75rem] border border-silver/25 bg-gradient-to-br from-gunmetal/55 to-deepblue/35 p-6 shadow-glow">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-silver">Summer Place Community App</p>
             <h3 className="mt-2 text-3xl font-semibold text-white">Resident Experience Layer</h3>
             <p className="mt-4 leading-7 text-slate-200">
               The opportunity is to give Summer Place something residents can actually use, feel, and return to.
@@ -759,7 +759,7 @@ function GapSection() {
       <Glass className="relative min-h-[500px] overflow-hidden p-5 md:p-8">
         <div className="map-lines" />
         <motion.div
-          className="absolute left-1/2 top-1/2 z-10 w-[min(82%,330px)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-aqua/35 bg-gradient-to-br from-harbor/85 to-graphite/95 p-6 text-center shadow-glow"
+          className="absolute left-1/2 top-1/2 z-10 w-[min(82%,330px)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-silver/25 bg-gradient-to-br from-gunmetal/85 to-darkgraphite/95 p-6 text-center shadow-glow"
           initial={{ scale: 0.92, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
@@ -830,7 +830,7 @@ function PillarsSection({ activePillar, setActivePillar }) {
               onClick={() => setActivePillar(pillar)}
               whileHover={{ y: -6, rotateX: 1.5 }}
               className={`curved-glass-card min-h-48 p-5 text-left ${
-                activePillar.title === pillar.title ? "ring-1 ring-aqua/70 bg-aqua/[0.1] blue-glow" : ""
+                activePillar.title === pillar.title ? "ring-1 ring-harbor/60 bg-harbor/[0.12] blue-glow" : ""
               }`}
             >
               <div className="mb-5 grid h-12 w-12 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/20">
@@ -860,7 +860,7 @@ function JourneySection({ activeStep, setActiveStep, progress }) {
                 onClick={() => setActiveStep(index)}
                 whileHover={{ y: -4 }}
                 className={`relative flex w-full gap-4 rounded-[1.4rem] border p-4 text-left transition ${
-                  activeStep === index ? "border-aqua/60 bg-aqua/10" : "border-white/10 bg-white/[0.035] hover:bg-white/[0.08]"
+                  activeStep === index ? "border-harbor/60 bg-harbor/12" : "border-white/10 bg-white/[0.035] hover:bg-white/[0.08]"
                 }`}
               >
                 {index < timeline.length - 1 && <span className="absolute left-10 top-full hidden h-px w-[calc(100%-1rem)] bg-aqua/20 lg:left-[calc(100%-0.5rem)] lg:top-1/2 lg:block" />}
@@ -884,12 +884,12 @@ function JourneySection({ activeStep, setActiveStep, progress }) {
             <ClipboardCheck className="h-8 w-8 text-aqua" />
           </div>
           <div className="mb-6 h-3 rounded-full bg-white/10">
-            <motion.div className="h-full rounded-full bg-aqua" animate={{ width: `${progress}%` }} transition={{ duration: 0.45 }} />
+            <motion.div className="h-full rounded-full bg-harbor" animate={{ width: `${progress}%` }} transition={{ duration: 0.45 }} />
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {checklist.map((item, index) => (
               <div key={item} className="flex items-center gap-3 rounded-lg bg-white/[0.055] p-3">
-                <span className={`grid h-6 w-6 shrink-0 place-items-center rounded-full ${index < Math.ceil((progress / 100) * checklist.length) ? "bg-aqua text-midnight" : "bg-white/10 text-slate-400"}`}>
+                <span className={`grid h-6 w-6 shrink-0 place-items-center rounded-full ${index < Math.ceil((progress / 100) * checklist.length) ? "bg-harbor text-white" : "bg-white/10 text-slate-400"}`}>
                   <Check className="h-4 w-4" />
                 </span>
                 <span className="text-sm text-slate-200">{item}</span>
@@ -918,7 +918,7 @@ function GuideSection({ activeGuide, setActiveGuide }) {
               onClick={() => setActiveGuide(title)}
               whileHover={{ y: -5 }}
               className={`curved-glass-card p-5 text-left ${
-                activeGuide === title ? "ring-1 ring-aqua/65 bg-aqua/[0.08]" : "hover:bg-white/[0.08]"
+                activeGuide === title ? "ring-1 ring-harbor/60 bg-harbor/[0.1]" : "hover:bg-white/[0.08]"
               }`}
             >
               <div className="mb-5 grid h-12 w-12 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/20">
@@ -987,7 +987,7 @@ function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) 
               key={question}
               onClick={() => setActiveQuestion(question)}
               className={`rounded-full border px-4 py-3 text-left text-sm font-semibold transition ${
-                question === activeQuestion ? "border-aqua/70 bg-aqua/10 text-white" : "border-white/10 bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]"
+                question === activeQuestion ? "border-harbor/70 bg-harbor/12 text-white" : "border-white/10 bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]"
               }`}
             >
               {question}
@@ -1005,7 +1005,7 @@ function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) 
             </div>
           </div>
           <div className="space-y-4 rounded-2xl bg-[#0c2a3d]/65 p-4 ring-1 ring-white/10">
-            <div className="ml-auto max-w-[82%] rounded-2xl rounded-tr-sm bg-aqua/15 p-4 text-sm text-slate-100">
+            <div className="ml-auto max-w-[82%] rounded-2xl rounded-tr-sm bg-harbor/20 p-4 text-sm text-slate-100">
               {activeQuestion}
             </div>
             <div className="max-w-[88%] rounded-2xl rounded-tl-sm bg-white/[0.075] p-4 text-sm leading-7 text-slate-100">
@@ -1045,7 +1045,7 @@ function QuestionGrid({ activeQuestion, setActiveQuestion }) {
                     key={question}
                     onClick={() => setActiveQuestion(question)}
                     className={`rounded-2xl border px-4 py-3 text-left text-sm transition ${
-                      activeQuestion === question ? "border-aqua/60 bg-aqua/12 text-white" : "border-white/10 bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]"
+                      activeQuestion === question ? "border-harbor/60 bg-harbor/15 text-white" : "border-white/10 bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]"
                     }`}
                   >
                     {question}
@@ -1320,7 +1320,7 @@ function PilotSection() {
             </div>
             <p className="mb-5 text-sm leading-6 text-slate-300">{phase.description}</p>
             <div className="mb-5 h-1.5 rounded-full bg-white/10">
-              <div className="h-full rounded-full bg-aqua" style={{ width: `${(index + 1) * 28}%` }} />
+              <div className="h-full rounded-full bg-harbor" style={{ width: `${(index + 1) * 28}%` }} />
             </div>
             <div className="space-y-3">
               {phase.items.map((item) => (
@@ -1494,9 +1494,9 @@ function AppPhone({ pillar }) {
           </div>
           {pillar.chat ? (
             <div className="space-y-3">
-              <div className="ml-auto rounded-2xl rounded-tr-sm bg-aqua/15 p-3 text-sm text-white">{pillar.items[0]}</div>
+              <div className="ml-auto rounded-2xl rounded-tr-sm bg-harbor/20 p-3 text-sm text-white">{pillar.items[0]}</div>
               <div className="rounded-2xl rounded-tl-sm bg-white/[0.07] p-3 text-sm leading-6 text-slate-200">{pillar.items[1]}</div>
-              <div className="rounded-lg border border-aqua/25 bg-aqua/10 p-3 text-sm font-semibold text-aqua">{pillar.items[2]}</div>
+              <div className="rounded-lg border border-harbor/30 bg-harbor/12 p-3 text-sm font-semibold text-silver">{pillar.items[2]}</div>
             </div>
           ) : (
             <div className="space-y-3">
@@ -1565,7 +1565,7 @@ function HomeDashboardScreen() {
 function SettleInScreen() {
   return (
     <PhoneScreenScaffold title="62% complete" eyebrow="Move-In Progress">
-      <div className="h-2.5 rounded-full bg-white/10"><div className="h-full w-[62%] rounded-full bg-aqua" /></div>
+      <div className="h-2.5 rounded-full bg-white/10"><div className="h-full w-[62%] rounded-full bg-harbor" /></div>
       <PhoneList items={["Welcome to Summer Place", "First 24 Hours", "First 7 Days", "Utility Setup", "Parking", "Packages", "Trash & Bulk Trash", "Pet Expectations", "Emergency Info", "Maintenance Portal"]} />
     </PhoneScreenScaffold>
   );
@@ -1593,11 +1593,11 @@ function SmokeGuideScreen() {
 function AskChatScreen() {
   return (
     <PhoneScreenScaffold title="Ask Summer" eyebrow="Resident Concierge">
-      <div className="ml-auto rounded-2xl rounded-tr-sm bg-aqua/15 p-3 text-sm text-white">Where does bulk trash go?</div>
+      <div className="ml-auto rounded-2xl rounded-tr-sm bg-harbor/20 p-3 text-sm text-white">Where does bulk trash go?</div>
       <div className="rounded-2xl rounded-tl-sm bg-white/[0.07] p-3 text-sm leading-6 text-slate-200">
         Open Trash & Clean Community for location, timing, and what not to leave near dumpsters.
       </div>
-      <button className="w-full rounded-full border border-aqua/25 bg-aqua/10 px-3 py-2 text-sm font-semibold text-aqua">Open suggested guide</button>
+      <button className="w-full rounded-full border border-harbor/30 bg-harbor/12 px-3 py-2 text-sm font-semibold text-silver">Open suggested guide</button>
     </PhoneScreenScaffold>
   );
 }
@@ -1660,7 +1660,7 @@ function PhoneBottomNav() {
 function PhoneFrame({ children }) {
   return (
     <div className="phone-frame p-3">
-      <div className="relative overflow-hidden rounded-[1.55rem] border border-white/10 bg-gradient-to-b from-harbor to-midnight">
+      <div className="relative overflow-hidden rounded-[1.55rem] border border-silver/15 bg-gradient-to-b from-gunmetal to-midnight">
         <div className="pointer-events-none absolute inset-x-6 top-0 h-28 rounded-full bg-white/10 blur-2xl" />
         <div className="relative flex items-center justify-between px-5 pt-3 text-[10px] font-semibold text-slate-300">
           <span>9:41</span>
