@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Bell,
+  BookOpen,
   Building2,
+  CalendarDays,
   Check,
   ChevronRight,
   CircleHelp,
@@ -51,6 +53,133 @@ const opportunityCards = [
 ];
 
 const apartmentTools = ["Rent portal", "Maintenance form", "Mass text", "Website"];
+
+const experienceModes = [
+  {
+    id: "moving",
+    title: "I'm moving in",
+    icon: KeyRound,
+    description: "See how a new resident gets guided through their first day, first week, and first month.",
+  },
+  {
+    id: "question",
+    title: "I have a question",
+    icon: MessageCircle,
+    description: "See how Ask Summer helps residents get clarity before calling or texting the office.",
+  },
+  {
+    id: "rules",
+    title: "I want to understand the rules",
+    icon: BookOpen,
+    description: "See how the Resident Guide turns expectations into simple, helpful education.",
+  },
+  {
+    id: "connected",
+    title: "I want to feel connected",
+    icon: Users,
+    description: "See how community updates, events, perks, and local partners make Summer Place feel alive.",
+  },
+];
+
+const demoPanels = {
+  moving: {
+    title: "Move-in becomes guided instead of overwhelming.",
+    scenario: "A new resident gets their keys, receives the Summer Place app link, creates their account, and chooses 'New Resident.'",
+    current: "Without one home base, move-in details spread across calls, texts, papers, and memory.",
+    helps: "The app turns the first week into a guided checklist with the right resources in one place.",
+    benefit: "New residents feel guided from day one, and staff has fewer basic questions to repeat.",
+    screen: "settle",
+  },
+  question: {
+    title: "Common questions get answered before they become calls.",
+    scenario: "A resident is unsure where bulk trash goes or what to do when the AC stops cooling.",
+    current: "Common questions often become office calls or texts because residents do not know where to start.",
+    helps: "Ask Summer gives a clear first answer, links the right guide, and redirects urgent or account-specific issues to staff.",
+    benefit: "Residents get clarity faster while official support channels stay protected.",
+    screen: "ask",
+  },
+  rules: {
+    title: "Better context creates better resident behavior.",
+    scenario: "Some issues repeat because residents get reminders but not enough explanation.",
+    current: "Reminders tell residents what to do. They do not always help residents understand why it matters.",
+    helps: "The Resident Guide turns expectations into short, respectful education residents can revisit.",
+    benefit: "The Resident Guide helps Summer Place educate without talking down to residents.",
+    screen: "smoke",
+  },
+  connected: {
+    title: "Summer Place feels alive between announcements.",
+    scenario: "Texts are great for urgent updates, but community needs a place residents can return to.",
+    current: "Updates disappear into message threads, and community moments do not have a permanent home.",
+    helps: "The app gives events, perks, appreciation, staff spotlights, and property updates a polished resident feed.",
+    benefit: "Residents see Summer Place as more than buildings. They see an active community.",
+    screen: "community",
+  },
+};
+
+const lifecycleStages = [
+  ["Before Move-In", "Know what to expect.", Home],
+  ["Move-In Week", "Get settled faster.", KeyRound],
+  ["First Month", "Learn the property.", BookOpen],
+  ["Daily Living", "Ask, search, and understand.", MessageCircle],
+  ["Community Life", "Events, perks, updates, and connection.", Users],
+  ["Renewal Season", "Feel more value in staying.", Star],
+  ["Move-Out", "Leave smoothly and avoid preventable charges.", ClipboardCheck],
+];
+
+const questionGroups = [
+  {
+    title: "Living Here",
+    questions: ["Where does bulk trash go?", "What are quiet hours?", "Where can guests park?", "How do packages work?"],
+  },
+  {
+    title: "Apartment Care",
+    questions: ["What do I do if my AC stops cooling?", "What should I check before submitting maintenance?", "What do I do if I see a leak?", "How do I prevent pests?"],
+  },
+  {
+    title: "Community",
+    questions: ["Are there upcoming events?", "Are there local perks?", "What are pool rules?", "How do I stay updated?"],
+  },
+  {
+    title: "Policies",
+    questions: ["Can I smoke inside?", "What are pet expectations?", "What if I smell smoke?", "How do I report a concern?"],
+  },
+];
+
+const questionAnswers = {
+  "Where does bulk trash go?": ["Bulk trash instructions live in Trash & Clean Community, including location, timing, and what not to leave near dumpsters.", "Trash & Clean Community"],
+  "What are quiet hours?": ["Quiet-hour guidance belongs in Noise & Neighbor Respect so residents can understand expectations before issues grow.", "Noise & Neighbor Respect"],
+  "Where can guests park?": ["Guest parking guidance points residents to approved areas and overnight expectations.", "Parking & Guest Parking"],
+  "How do packages work?": ["Package guidance explains delivery notes, missed packages, and when to contact the office.", "Packages & Deliveries"],
+  "What do I do if my AC stops cooling?": ["Residents can check thermostat mode, fan setting, temperature, and breaker before using the official maintenance portal.", "AC basics"],
+  "What should I check before submitting maintenance?": ["The app can show simple pre-checks, then send residents to the existing maintenance system.", "Maintenance basics"],
+  "What do I do if I see a leak?": ["The app can explain immediate steps and route urgent issues to official support channels.", "Emergency guidance"],
+  "How do I prevent pests?": ["Residents can learn daily habits around food, trash, moisture, and reporting early signs.", "Apartment Care 101"],
+  "Are there upcoming events?": ["Community updates can keep events visible after a text announcement passes.", "Community"],
+  "Are there local perks?": ["The Local Perks section can list current resident offers and local partners.", "Local Perks"],
+  "What are pool rules?": ["Pool guidance can explain amenity expectations in a simple resident-friendly format.", "Pool & Amenity Etiquette"],
+  "How do I stay updated?": ["The app becomes the place residents return to for updates, guides, events, and reminders.", "Home Dashboard"],
+  "Can I smoke inside?": ["No. Summer Place follows a no-smoking addendum, and residents can review smoke-free living guidance in the Resident Guide.", "Smoke-Free Living"],
+  "What are pet expectations?": ["Pet Life can explain shared-space expectations, cleanup, and neighbor comfort.", "Pet Life"],
+  "What if I smell smoke?": ["The guide can explain what residents can document, how odor travels, and when to contact the office.", "Smoke-Free Living"],
+  "How do I report a concern?": ["The app can point residents to the right official channel and clarify when to contact the office directly.", "Resident support"],
+};
+
+const libraryCategories = [
+  ["New Resident", ["First 24 Hours", "First Week", "Utilities", "Parking", "Packages"]],
+  ["Daily Living", ["Trash", "Pets", "Noise", "Guests", "Apartment Care"]],
+  ["Property Protection", ["Smoke-Free Living", "Preventing Damage", "Pest Prevention", "Storm Prep"]],
+  ["Community", ["Events", "Local Perks", "Staff Spotlights", "Resident Appreciation"]],
+  ["Move-Out", ["Cleaning Checklist", "Keys", "Avoidable Charges", "Final Steps"]],
+];
+
+const managementCards = [
+  ["Approved Knowledge Base", "Office hours, amenity rules, parking, trash, packages, policies, emergency guidance, and resident expectations.", ShieldCheck],
+  ["Safe AI Boundaries", "Ask Summer answers common questions from approved content and redirects urgent or account-specific issues to staff.", MessageCircle],
+  ["Easy Content Updates", "Guides and app content can be updated as policies, reminders, seasons, or property priorities change.", ClipboardCheck],
+];
+
+const existingSystems = ["Rent portal", "Maintenance portal", "Mass texting", "Website", "Lease documents"];
+const communityAppSystems = ["Resident onboarding", "Learning guides", "Ask Summer concierge", "Community updates", "Local perks", "Resident knowledge base"];
 
 const pillars = [
   {
@@ -224,6 +353,8 @@ function App() {
   const [activeStep, setActiveStep] = useState(2);
   const [activeGuide, setActiveGuide] = useState(guides[0][0]);
   const [activeQuestion, setActiveQuestion] = useState("Can I smoke inside?");
+  const [activeExperience, setActiveExperience] = useState("moving");
+  const [activeGridQuestion, setActiveGridQuestion] = useState("Where does bulk trash go?");
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
@@ -238,9 +369,13 @@ function App() {
   return (
     <main className="min-h-screen overflow-hidden bg-midnight text-frost">
       <TopNav />
+      <VisionProgress />
       <Hero />
+      <ExperienceMode activeExperience={activeExperience} setActiveExperience={setActiveExperience} />
+      <ResidentJourneyDemo activeExperience={activeExperience} setActiveExperience={setActiveExperience} />
       <OpportunitySection />
       <GapSection />
+      <ResidentLifecycleMap />
       <PillarsSection activePillar={activePillar} setActivePillar={setActivePillar} />
       <JourneySection activeStep={activeStep} setActiveStep={setActiveStep} progress={progress} />
       <GuideSection activeGuide={activeGuide} setActiveGuide={setActiveGuide} />
@@ -250,7 +385,11 @@ function App() {
         askAnswer={askAnswer}
         isTyping={isTyping}
       />
+      <QuestionGrid activeQuestion={activeGridQuestion} setActiveQuestion={setActiveGridQuestion} />
+      <ContentLibraryPreview />
       <CommunitySection />
+      <ManagementControl />
+      <NoDisruptionSection />
       <StaffSection />
       <DifferentSection />
       <PilotSection />
@@ -301,6 +440,30 @@ function TopNav() {
   );
 }
 
+function VisionProgress() {
+  const items = [
+    ["Vision", "hero"],
+    ["Opportunity", "opportunity"],
+    ["Experience", "experience"],
+    ["App Preview", "pillars"],
+    ["Guide", "guide"],
+    ["Ask Summer", "ask"],
+    ["Pilot", "pilot"],
+  ];
+  return (
+    <div className="fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 xl:block">
+      <div className="premium-glass grid gap-2 p-3">
+        {items.map(([label, id]) => (
+          <a key={id} href={`#${id}`} className="group flex items-center justify-end gap-2 text-xs font-semibold text-steel">
+            <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 transition-all group-hover:max-w-28 group-hover:opacity-100">{label}</span>
+            <span className="h-2.5 w-2.5 rounded-full border border-aqua/35 bg-aqua/25 shadow-glow" />
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden px-4 pb-16 pt-28 md:px-6">
@@ -347,6 +510,85 @@ function Hero() {
         </Reveal>
       </div>
     </section>
+  );
+}
+
+function ExperienceMode({ activeExperience, setActiveExperience }) {
+  return (
+    <Section id="experience" eyebrow="Experience mode" title="Choose a resident journey.">
+      <p className="mb-7 max-w-3xl text-lg leading-8 text-slate-300">
+        Explore how the Summer Place Community App supports residents at different moments - from
+        move-in day to everyday living.
+      </p>
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {experienceModes.map(({ id, title, description, icon: Icon }) => (
+          <motion.button
+            key={id}
+            onClick={() => setActiveExperience(id)}
+            whileHover={{ y: -7 }}
+            className={`curved-glass-card min-h-64 p-6 text-left ${
+              activeExperience === id ? "bg-aqua/[0.1] ring-1 ring-aqua/70 blue-glow" : ""
+            }`}
+          >
+            <div className="mb-8 grid h-14 w-14 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/25">
+              <Icon className="h-7 w-7 text-aqua" />
+            </div>
+            <h3 className="text-2xl font-semibold text-white">{title}</h3>
+            <p className="mt-4 text-sm leading-6 text-slate-300">{description}</p>
+            <a href="#journey-demos" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-aqua">
+              Open demo <ArrowRight className="h-4 w-4" />
+            </a>
+          </motion.button>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function ResidentJourneyDemo({ activeExperience, setActiveExperience }) {
+  const demo = demoPanels[activeExperience];
+  return (
+    <Section id="journey-demos" eyebrow="Guided resident demos" title="See the future app through real resident moments.">
+      <div className="mb-5 flex gap-2 overflow-x-auto pb-2">
+        {experienceModes.map(({ id, title }) => (
+          <button
+            key={id}
+            onClick={() => setActiveExperience(id)}
+            className={`shrink-0 rounded-full border px-4 py-2 text-sm font-semibold ${
+              activeExperience === id ? "border-aqua/60 bg-aqua/12 text-white" : "border-white/10 bg-white/[0.04] text-slate-300"
+            }`}
+          >
+            {title}
+          </button>
+        ))}
+      </div>
+      <Glass strong className="p-5 md:p-8">
+        <div className="grid gap-8 xl:grid-cols-[1fr_410px] xl:items-center">
+          <div>
+            <h3 className="metallic-text text-3xl font-semibold leading-tight md:text-5xl">{demo.title}</h3>
+            <div className="mt-7 grid gap-4 md:grid-cols-2">
+              <StoryBlock label="Resident situation" text={demo.scenario} />
+              <StoryBlock label="What usually happens now" text={demo.current} />
+              <StoryBlock label="How the app helps" text={demo.helps} />
+              <StoryBlock label="Staff/community benefit" text={demo.benefit} />
+            </div>
+            <p className="mt-7 rounded-2xl border border-aqua/20 bg-white/[0.045] p-4 text-sm leading-6 text-slate-300">
+              Community is easier to build when residents have one trusted home base.
+            </p>
+          </div>
+          <PhoneScreenLibrary screen={demo.screen} />
+        </div>
+      </Glass>
+    </Section>
+  );
+}
+
+function StoryBlock({ label, text }) {
+  return (
+    <div className="rounded-[1.4rem] border border-aqua/15 bg-white/[0.045] p-4">
+      <p className="text-xs font-bold uppercase tracking-[0.14em] text-aqua">{label}</p>
+      <p className="mt-3 text-sm leading-6 text-slate-200">{text}</p>
+    </div>
   );
 }
 
@@ -434,6 +676,31 @@ function GapSection() {
             {item}
           </motion.div>
         ))}
+      </Glass>
+    </Section>
+  );
+}
+
+function ResidentLifecycleMap() {
+  return (
+    <Section id="lifecycle" eyebrow="Resident lifecycle" title="One app across the resident journey.">
+      <p className="mb-8 max-w-3xl text-lg leading-8 text-slate-300">
+        Instead of only helping residents when something goes wrong, the app supports the full
+        experience of living at Summer Place.
+      </p>
+      <Glass strong className="p-5 md:p-7">
+        <div className="grid gap-4 lg:grid-cols-7">
+          {lifecycleStages.map(([title, copy, Icon], index) => (
+            <div key={title} className="relative rounded-[1.4rem] border border-white/10 bg-white/[0.04] p-4">
+              {index < lifecycleStages.length - 1 && <span className="absolute left-10 top-full hidden h-px w-[calc(100%-1rem)] bg-aqua/20 lg:left-[calc(100%-0.5rem)] lg:top-8 lg:block" />}
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/25">
+                <Icon className="h-5 w-5 text-aqua" />
+              </div>
+              <h3 className="font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-300">{copy}</p>
+            </div>
+          ))}
+        </div>
       </Glass>
     </Section>
   );
@@ -630,6 +897,86 @@ function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) 
   );
 }
 
+function QuestionGrid({ activeQuestion, setActiveQuestion }) {
+  const [answer, guide] = questionAnswers[activeQuestion];
+  return (
+    <Section id="questions" eyebrow="Ask before contacting" title="What residents can ask before contacting the office.">
+      <p className="mb-7 max-w-3xl text-lg leading-8 text-slate-300">
+        Ask Summer is designed to reduce confusion, not replace staff.
+      </p>
+      <div className="grid gap-6 xl:grid-cols-[1fr_420px]">
+        <div className="grid gap-4 md:grid-cols-2">
+          {questionGroups.map((group) => (
+            <Glass key={group.title} className="p-5">
+              <h3 className="mb-4 text-xl font-semibold text-white">{group.title}</h3>
+              <div className="grid gap-2">
+                {group.questions.map((question) => (
+                  <button
+                    key={question}
+                    onClick={() => setActiveQuestion(question)}
+                    className={`rounded-2xl border px-4 py-3 text-left text-sm transition ${
+                      activeQuestion === question ? "border-aqua/60 bg-aqua/12 text-white" : "border-white/10 bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]"
+                    }`}
+                  >
+                    {question}
+                  </button>
+                ))}
+              </div>
+            </Glass>
+          ))}
+        </div>
+        <Glass strong className="p-6">
+          <div className="mb-5 flex items-center gap-3">
+            <div className="grid h-12 w-12 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/25">
+              <Sparkles className="h-5 w-5 text-aqua" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-aqua">Ask Summer answer preview</p>
+              <h3 className="text-xl font-semibold text-white">{activeQuestion}</h3>
+            </div>
+          </div>
+          <p className="leading-7 text-slate-200">{answer}</p>
+          <button className="secondary-btn mt-5 px-4 py-2">Suggested guide: {guide}</button>
+          <p className="mt-5 text-xs leading-5 text-steel">
+            Contact office if urgent, emergency-related, or account-specific.
+          </p>
+        </Glass>
+      </div>
+    </Section>
+  );
+}
+
+function ContentLibraryPreview() {
+  return (
+    <Section id="library" eyebrow="Living knowledge base" title="The app becomes a living resident knowledge base.">
+      <p className="mb-7 max-w-3xl text-lg leading-8 text-slate-300">
+        Start with the highest-impact guides, then grow based on the questions residents actually ask.
+      </p>
+      <div className="mb-6 grid gap-4 md:grid-cols-3">
+        {["40+ potential resident guides", "6 core app sections", "1 trusted home base"].map((stat) => (
+          <Glass key={stat} className="p-5 text-center">
+            <p className="text-2xl font-semibold text-white">{stat}</p>
+          </Glass>
+        ))}
+      </div>
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+        {libraryCategories.map(([title, items]) => (
+          <Glass key={title} className="p-5">
+            <h3 className="mb-4 text-xl font-semibold text-white">{title}</h3>
+            <div className="space-y-2">
+              {items.map((item) => (
+                <div key={item} className="rounded-xl bg-white/[0.055] px-3 py-2 text-sm text-slate-200">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </Glass>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
 function CommunitySection() {
   const cards = [
     ["Resident Appreciation Weekend", "A standing home for appreciation moments and small community wins.", Users],
@@ -655,6 +1002,65 @@ function CommunitySection() {
         ))}
       </div>
     </Section>
+  );
+}
+
+function ManagementControl() {
+  return (
+    <Section id="approved" eyebrow="Approved information" title="Built around approved Summer Place information.">
+      <p className="mb-7 max-w-3xl text-lg leading-8 text-slate-300">
+        The future app can be built so the content, guide language, and AI answers only reflect
+        information Summer Place approves.
+      </p>
+      <div className="grid gap-4 lg:grid-cols-3">
+        {managementCards.map(([title, copy, Icon]) => (
+          <Glass key={title} className="p-6">
+            <div className="mb-5 grid h-12 w-12 place-items-center rounded-full bg-aqua/12 ring-1 ring-aqua/25">
+              <Icon className="h-6 w-6 text-aqua" />
+            </div>
+            <h3 className="text-xl font-semibold text-white">{title}</h3>
+            <p className="mt-3 text-sm leading-6 text-slate-300">{copy}</p>
+          </Glass>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function NoDisruptionSection() {
+  return (
+    <Section id="fit" eyebrow="No disruption" title="Designed to fit beside what already works.">
+      <Glass strong className="p-6 md:p-8">
+        <p className="mx-auto mb-7 max-w-4xl text-center text-lg leading-8 text-slate-200">
+          Summer Place already has systems for payments, maintenance, messaging, and management. The
+          Community App does not compete with those systems. It gives residents a better place to
+          understand them.
+        </p>
+        <div className="grid gap-5 md:grid-cols-2">
+          <SystemList title="Existing Systems" items={existingSystems} />
+          <SystemList title="Community App" items={communityAppSystems} />
+        </div>
+        <p className="mt-7 text-center text-2xl font-semibold text-white">
+          Operations stay where they are. Resident experience gets upgraded.
+        </p>
+      </Glass>
+    </Section>
+  );
+}
+
+function SystemList({ title, items }) {
+  return (
+    <div className="rounded-[1.6rem] border border-white/10 bg-white/[0.045] p-5">
+      <h3 className="mb-4 text-xl font-semibold text-white">{title}</h3>
+      <div className="grid gap-2">
+        {items.map((item) => (
+          <div key={item} className="flex items-center gap-3 rounded-xl bg-white/[0.055] px-3 py-2 text-sm text-slate-200">
+            <Check className="h-4 w-4 text-aqua" />
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -864,6 +1270,148 @@ function AppPhone({ pillar }) {
         </div>
       </PhoneFrame>
     </motion.div>
+  );
+}
+
+function PhoneScreenLibrary({ screen }) {
+  const screenMap = {
+    home: <HomeDashboardScreen />,
+    settle: <SettleInScreen />,
+    guide: <GuideLibraryScreen />,
+    smoke: <SmokeGuideScreen />,
+    ask: <AskChatScreen />,
+    community: <CommunityFeedScreen />,
+    perks: <LocalPerksScreen />,
+    library: <ContentLibraryScreen />,
+  };
+  return (
+    <motion.div className="phone-shell mx-auto" key={screen} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
+      <PhoneFrame>{screenMap[screen] || screenMap.home}</PhoneFrame>
+    </motion.div>
+  );
+}
+
+function PhoneScreenScaffold({ title, eyebrow, children }) {
+  return (
+    <div className="p-5">
+      <div className="mb-5 flex items-center justify-between">
+        <div>
+          <p className="text-xs text-aqua">{eyebrow}</p>
+          <h3 className="text-2xl font-semibold text-white">{title}</h3>
+        </div>
+        <img src="/logo.png" alt="" className="h-11 w-11 rounded-full object-contain" />
+      </div>
+      <div className="space-y-3">{children}</div>
+      <PhoneBottomNav />
+    </div>
+  );
+}
+
+function HomeDashboardScreen() {
+  return (
+    <PhoneScreenScaffold title="Welcome home" eyebrow="Summer Place">
+      <div className="grid grid-cols-2 gap-3">
+        {["Ask Summer", "Settle In", "Guide", "Perks"].map((item) => (
+          <div key={item} className="rounded-2xl bg-white/[0.07] p-3 text-sm font-semibold text-white">{item}</div>
+        ))}
+      </div>
+      <PhoneList items={["Today's guide", "Community update", "Local perk"]} />
+    </PhoneScreenScaffold>
+  );
+}
+
+function SettleInScreen() {
+  return (
+    <PhoneScreenScaffold title="62% complete" eyebrow="Move-In Progress">
+      <div className="h-2.5 rounded-full bg-white/10"><div className="h-full w-[62%] rounded-full bg-aqua" /></div>
+      <PhoneList items={["Welcome to Summer Place", "First 24 Hours", "First 7 Days", "Utility Setup", "Parking", "Packages", "Trash & Bulk Trash", "Pet Expectations", "Emergency Info", "Maintenance Portal"]} />
+    </PhoneScreenScaffold>
+  );
+}
+
+function GuideLibraryScreen() {
+  return (
+    <PhoneScreenScaffold title="Resident Guide" eyebrow="Learning Hub">
+      <PhoneList items={["Smoke-Free Living", "Pet Life", "Trash & Bulk Trash", "Apartment Care", "Storm Prep"]} />
+    </PhoneScreenScaffold>
+  );
+}
+
+function SmokeGuideScreen() {
+  return (
+    <PhoneScreenScaffold title="Smoke-Free Living" eyebrow="Guide Preview">
+      <div className="rounded-2xl border border-aqua/20 bg-aqua/10 p-3 text-sm leading-6 text-slate-100">
+        Respect the no-smoking addendum, reduce odor complaints, protect renovated units, and help residents make cleaner choices.
+      </div>
+      <PhoneList items={["Respect the addendum", "Why odor travels", "Protecting renovated units", "Lower-odor options", "Outdoor courtesy"]} />
+    </PhoneScreenScaffold>
+  );
+}
+
+function AskChatScreen() {
+  return (
+    <PhoneScreenScaffold title="Ask Summer" eyebrow="Resident Concierge">
+      <div className="ml-auto rounded-2xl rounded-tr-sm bg-aqua/15 p-3 text-sm text-white">Where does bulk trash go?</div>
+      <div className="rounded-2xl rounded-tl-sm bg-white/[0.07] p-3 text-sm leading-6 text-slate-200">
+        Open Trash & Clean Community for location, timing, and what not to leave near dumpsters.
+      </div>
+      <button className="w-full rounded-full border border-aqua/25 bg-aqua/10 px-3 py-2 text-sm font-semibold text-aqua">Open suggested guide</button>
+    </PhoneScreenScaffold>
+  );
+}
+
+function CommunityFeedScreen() {
+  return (
+    <PhoneScreenScaffold title="Community" eyebrow="Resident Feed">
+      <PhoneList items={["Resident Appreciation Weekend", "Pool Reminder", "Property Upgrade Update", "Staff Spotlight", "Local Partner Perk", "Community Poll", "Storm Prep Reminder"]} />
+    </PhoneScreenScaffold>
+  );
+}
+
+function LocalPerksScreen() {
+  return (
+    <PhoneScreenScaffold title="Local Perks" eyebrow="Resident Offers">
+      <PhoneList items={["Groomed Gent Co. - SUMMERPLACE20", "Local food partner", "Pet service partner", "Cleaning help", "Fitness/wellness partner"]} />
+    </PhoneScreenScaffold>
+  );
+}
+
+function ContentLibraryScreen() {
+  return (
+    <PhoneScreenScaffold title="Knowledge Base" eyebrow="Content Library">
+      <PhoneList items={["New Resident", "Daily Living", "Property Protection", "Community", "Move-Out"]} />
+    </PhoneScreenScaffold>
+  );
+}
+
+function PhoneList({ items }) {
+  return (
+    <div className="space-y-2">
+      {items.map((item) => (
+        <div key={item} className="flex items-center justify-between rounded-xl bg-white/[0.06] px-3 py-2.5 text-sm text-slate-100">
+          <span>{item}</span>
+          <ChevronRight className="h-4 w-4 text-aqua" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PhoneBottomNav() {
+  return (
+    <div className="mt-4 grid grid-cols-4 gap-2 rounded-2xl border border-white/10 bg-white/[0.045] p-2">
+      {[
+        [Home, "Home"],
+        [BookOpen, "Guide"],
+        [MessageCircle, "Ask"],
+        [Users, "Community"],
+      ].map(([Icon, label]) => (
+        <div key={label} className="grid place-items-center gap-1 text-[10px] text-steel">
+          <Icon className="h-4 w-4 text-aqua" />
+          {label}
+        </div>
+      ))}
+    </div>
   );
 }
 
