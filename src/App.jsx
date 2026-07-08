@@ -24,6 +24,7 @@ import {
   Waves,
   X,
 } from "lucide-react";
+import Logo from "./Logo.jsx";
 
 const navItems = [
   ["Vision", "hero"],
@@ -467,7 +468,7 @@ function TopNav() {
     <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-midnight/80 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
         <a href="#hero" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src="/logo.png" alt="Summer Place" className="h-10 w-10 rounded-full object-contain ring-1 ring-white/15" />
+          <Logo className="h-11 w-11 rounded-full ring-1 ring-silver/25" />
           <span className="text-sm font-semibold text-white">Summer Place Vision</span>
         </a>
         <div className="hidden items-center gap-1 lg:flex">
@@ -540,7 +541,7 @@ function Hero() {
                 animate={{ boxShadow: ["0 20px 70px rgba(168,216,234,0.14)", "0 28px 90px rgba(168,216,234,0.26)", "0 20px 70px rgba(168,216,234,0.14)"] }}
                 transition={{ duration: 4.8, repeat: Infinity }}
               >
-                <img src="/logo.png" alt="Summer Place Apartments logo" className="h-full w-full rounded-full object-contain" />
+                <Logo className="h-full w-full rounded-full" />
               </motion.div>
               <div className="rounded-full border border-silver/25 bg-silver/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-silver shadow-[inset_0_-1px_0_rgba(0,111,152,0.45)]">
                 Resident Experience Concept
@@ -765,7 +766,7 @@ function GapSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <img src="/logo.png" alt="" className="mx-auto mb-4 h-14 w-14 rounded-full object-contain" />
+          <Logo className="mx-auto mb-4 h-14 w-14 rounded-full" />
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-aqua">One trusted home base</p>
           <h3 className="mt-2 text-2xl font-semibold text-white">Summer Place Community App</h3>
           <p className="mt-4 text-sm leading-6 text-slate-300">
@@ -1392,7 +1393,7 @@ function FinalCta() {
       <Reveal>
         <div className="premium-glass-strong mx-auto max-w-5xl p-8 text-center md:p-14">
           <div className="premium-glass mx-auto mb-7 grid h-24 w-24 place-items-center rounded-[1.8rem] p-3">
-            <img src="/logo.png" alt="" className="h-full w-full rounded-full object-contain" />
+            <Logo className="h-full w-full rounded-full" />
           </div>
           <h2 className="metallic-text text-4xl font-semibold leading-tight md:text-6xl">
             Summer Place already has the property, the systems, and the team.
@@ -1420,7 +1421,10 @@ function Footer() {
   return (
     <footer className="border-t border-aqua/10 px-4 py-8 md:px-6">
       <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-steel md:flex-row md:items-center md:justify-between">
-        <p className="font-semibold text-slate-200">Summer Place Community Vision</p>
+        <div className="flex items-center gap-3">
+          <Logo className="h-9 w-9 rounded-full ring-1 ring-silver/20" />
+          <p className="font-semibold text-slate-200">Summer Place Community Vision</p>
+        </div>
         <p>Resident experience concept by Gent Ascend Collective</p>
         <p>Built as a vision prototype for discussion and feedback.</p>
       </div>
@@ -1454,7 +1458,7 @@ function DashboardPhone() {
                 <p className="text-xs text-aqua">Summer Place</p>
                 <h3 className="text-2xl font-semibold text-white">Welcome home</h3>
               </div>
-              <img src="/logo.png" alt="" className="h-12 w-12 rounded-full object-contain" />
+              <Logo className="h-12 w-12 rounded-full" />
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
@@ -1541,7 +1545,7 @@ function PhoneScreenScaffold({ title, eyebrow, children }) {
           <p className="text-xs text-aqua">{eyebrow}</p>
           <h3 className="text-2xl font-semibold text-white">{title}</h3>
         </div>
-        <img src="/logo.png" alt="" className="h-11 w-11 rounded-full object-contain" />
+        <Logo className="h-11 w-11 rounded-full" />
       </div>
       <div className="space-y-3">{children}</div>
       <PhoneBottomNav />
