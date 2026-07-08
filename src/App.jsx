@@ -199,7 +199,6 @@ const pilotPhases = [
 
 const credibility = [
   "Current Summer Place resident",
-  "Founder of Gent Ascend Collective",
   "Founder of Groomed Gent Co.",
   "10+ years customer service and operations",
   "Restaurant operations leadership",
@@ -264,7 +263,7 @@ function TopNav() {
               {label}
             </a>
           ))}
-          <a href="#final" className="ml-2 rounded-full bg-frost px-4 py-2 text-xs font-bold text-midnight transition hover:bg-white">
+          <a href="#final" className="ml-2 rounded-full border border-aqua/35 bg-harbor px-4 py-2 text-xs font-bold text-white shadow-glow transition hover:bg-[#1f7ea9]">
             Build the Community Layer
           </a>
         </div>
@@ -280,7 +279,7 @@ function TopNav() {
                 {label}
               </a>
             ))}
-            <a href="#final" onClick={() => setOpen(false)} className="mt-2 rounded-full bg-frost px-4 py-3 text-center text-sm font-bold text-midnight">
+            <a href="#final" onClick={() => setOpen(false)} className="mt-2 rounded-full border border-aqua/35 bg-harbor px-4 py-3 text-center text-sm font-bold text-white">
               Build the Community Layer
             </a>
           </div>
@@ -304,6 +303,7 @@ function Hero() {
                 Resident Experience Concept
               </div>
             </div>
+            <p className="mb-5 text-sm text-steel">A resident experience concept by Gent Ascend Collective.</p>
             <h1 className="text-5xl font-semibold leading-[1.02] text-white md:text-7xl">
               A custom community app for the next chapter of Summer Place.
             </h1>
@@ -365,7 +365,7 @@ function GapSection() {
       <Glass className="relative min-h-[500px] overflow-hidden p-5 md:p-8">
         <div className="map-lines" />
         <motion.div
-          className="absolute left-1/2 top-1/2 z-10 w-[min(82%,330px)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-aqua/35 bg-gradient-to-br from-harbor/85 to-midnight/90 p-6 text-center shadow-glow"
+          className="absolute left-1/2 top-1/2 z-10 w-[min(82%,330px)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-aqua/35 bg-gradient-to-br from-harbor/85 to-graphite/95 p-6 text-center shadow-glow"
           initial={{ scale: 0.92, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
@@ -559,7 +559,7 @@ function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) 
               <h3 className="font-semibold text-white">{activeQuestion}</h3>
             </div>
           </div>
-          <div className="space-y-4 rounded-2xl bg-slate-950/45 p-4 ring-1 ring-white/10">
+          <div className="space-y-4 rounded-2xl bg-[#0c2a3d]/65 p-4 ring-1 ring-white/10">
             <div className="ml-auto max-w-[82%] rounded-2xl rounded-tr-sm bg-aqua/15 p-4 text-sm text-slate-100">
               {activeQuestion}
             </div>
@@ -676,14 +676,14 @@ function PilotSection() {
 
 function WhySection() {
   return (
-    <Section id="why" eyebrow="Why Gent Ascend" title="Built by someone who sees the opportunity from inside the community.">
+    <Section id="why" eyebrow="Inside perspective" title="Built by someone who sees the opportunity from inside the community.">
       <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
         <Glass className="p-7">
           <p className="text-lg leading-8 text-slate-200">
             I live at Summer Place. I see the care being put into the property, and I see the chance
-            to make residents feel that care more clearly. Gent Ascend Collective exists to build
-            practical, useful technology for local businesses and communities - not generic software,
-            but tools that make people feel more guided, connected, and confident.
+            to make residents feel that care more clearly. This concept is built as practical, useful
+            technology for a real local community - not generic software, but a tool that makes people
+            feel more guided, connected, and confident.
           </p>
         </Glass>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -794,7 +794,7 @@ function AppPhone({ pillar }) {
 
 function PhoneFrame({ children }) {
   return (
-    <div className="rounded-[2rem] border border-white/20 bg-slate-950 p-3 shadow-glow">
+    <div className="rounded-[2rem] border border-white/20 bg-[#102838] p-3 shadow-glow">
       <div className="overflow-hidden rounded-[1.55rem] border border-white/10 bg-gradient-to-b from-harbor to-midnight">
         <div className="mx-auto mt-3 h-1.5 w-20 rounded-full bg-white/20" />
         {children}
