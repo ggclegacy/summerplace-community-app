@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #07111f;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(80, 150, 245, 0.18), transparent 28rem),
+    radial-gradient(circle at 88% 58%, rgba(180, 208, 230, 0.12), transparent 28rem),
+    #07111f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-xl border border-white/10 bg-white/[0.065] shadow-glass backdrop-blur-xl;
+  }
+
+  .primary-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-frost px-6 py-3 text-sm font-bold text-midnight shadow-glow transition hover:-translate-y-0.5 hover:bg-white;
+  }
+
+  .secondary-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-6 py-3 text-sm font-bold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/[0.11];
+  }
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 50% 35%, black, transparent 72%);
+  opacity: 0.55;
+}
+
+.float-card {
+  position: absolute;
+  width: 13rem;
+  height: 7rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.03));
+  box-shadow: 0 24px 80px rgba(0,0,0,0.22);
+  backdrop-filter: blur(18px);
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  inset: auto 6% 0 auto;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 999px;
+  background: rgba(127, 214, 255, 0.08);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 640px) {
+  .float-card {
+    display: none;
+  }
+}
