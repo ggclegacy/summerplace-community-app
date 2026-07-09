@@ -9,6 +9,13 @@
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   position: relative;
@@ -139,6 +146,22 @@ body {
     @apply futuristic-button inline-flex items-center justify-center gap-2 rounded-full border bg-white/[0.06] px-6 py-3 text-sm font-bold text-frost backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/[0.11];
     border-color: rgba(215, 222, 226, 0.24);
   }
+
+  .hero-heading {
+    font-size: clamp(2.75rem, 6.2vw, 5.6rem);
+    line-height: 0.98;
+  }
+
+  .section-heading {
+    font-size: clamp(2.15rem, 4vw, 4rem);
+    line-height: 1.05;
+  }
+
+  .executive-copy {
+    max-width: 46rem;
+    font-size: clamp(1rem, 1.1vw, 1.14rem);
+    line-height: 1.78;
+  }
 }
 
 .hero-bg {
@@ -207,8 +230,8 @@ body::before {
 
 .phone-shell {
   position: relative;
-  width: 100%;
-  max-width: 380px;
+  width: min(100%, clamp(18rem, 30vw, 24rem));
+  max-width: 100%;
   filter: drop-shadow(0 34px 60px rgba(7, 19, 28, 0.56));
 }
 
@@ -238,6 +261,15 @@ section {
   scroll-margin-top: 5.5rem;
 }
 
+.section-shell::after {
+  content: "";
+  position: absolute;
+  inset: auto 8% 0 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(215, 222, 226, 0.08), transparent);
+  pointer-events: none;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
@@ -250,5 +282,15 @@ a {
 
   .node-field span:nth-child(n + 9) {
     display: none;
+  }
+
+  .phone-shell {
+    width: min(100%, 22rem);
+  }
+}
+
+@media (min-width: 1600px) {
+  .phone-shell {
+    width: min(100%, 23rem);
   }
 }

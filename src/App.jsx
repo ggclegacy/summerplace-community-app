@@ -477,7 +477,7 @@ function TopNav() {
   const [open, setOpen] = useState(false);
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-midnight/80 backdrop-blur-2xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-3 md:px-6">
         <a href="#hero" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Logo className="h-11 w-11 rounded-full ring-1 ring-silver/25" />
           <span className="text-sm font-semibold text-white">Summer Place Vision</span>
@@ -498,7 +498,7 @@ function TopNav() {
       </div>
       {open && (
         <div className="border-t border-white/10 bg-midnight/95 px-4 py-4 lg:hidden">
-          <div className="mx-auto grid max-w-7xl gap-2">
+          <div className="mx-auto grid max-w-[1280px] gap-2">
             {navItems.map(([label, id]) => (
               <a key={id} href={`#${id}`} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-sm font-semibold text-slate-200 hover:bg-white/10">
                 {label}
@@ -543,7 +543,7 @@ function Hero() {
     <section id="hero" className="relative min-h-screen overflow-hidden px-4 pb-16 pt-28 md:px-6">
       <div className="hero-bg" />
       <BackgroundDetails />
-      <div className="relative mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+      <div className="relative mx-auto grid min-h-[calc(100vh-7rem)] max-w-[1280px] items-center gap-10 lg:grid-cols-[minmax(0,0.98fr)_minmax(320px,0.82fr)] xl:gap-14">
         <Reveal>
           <div className="max-w-3xl">
             <div className="mb-7 flex items-center gap-4">
@@ -559,14 +559,14 @@ function Hero() {
               </div>
             </div>
             <p className="mb-5 text-sm text-steel">A resident experience concept by Gent Ascend Collective.</p>
-            <h1 className="metallic-text text-5xl font-semibold leading-[1.02] md:text-7xl">
+            <h1 className="metallic-text hero-heading font-semibold">
               Summer Place can become more than a place people rent.
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">
+            <p className="executive-copy mt-7 text-slate-200">
               It can become a community residents understand, respect, connect with, and feel proud
               to call home.
             </p>
-            <p className="mt-5 max-w-xl text-base leading-7 text-steel">
+            <p className="executive-copy mt-5 text-steel">
               The Summer Place Community App is a custom resident experience layer - designed to help
               residents settle in, learn how to live here well, connect with the community, access
               local perks, and get trusted answers through an AI concierge built around
@@ -897,7 +897,7 @@ function JourneySection({ activeStep, setActiveStep, progress }) {
         login. The app can welcome them into the community, walk them through the first week, explain
         expectations, and make Summer Place feel organized from the start.
       </p>
-      <div className="grid gap-6">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_420px] xl:items-start">
         <Glass strong className="p-5 md:p-7">
           <div className="grid gap-4 lg:grid-cols-5">
             {timeline.map(([title, copy], index) => (
@@ -921,7 +921,7 @@ function JourneySection({ activeStep, setActiveStep, progress }) {
             ))}
           </div>
         </Glass>
-        <Glass className="p-6 md:p-7">
+        <Glass className="p-6 md:p-7 xl:sticky xl:top-28">
           <div className="mb-6 flex items-start justify-between gap-4">
             <div>
               <p className="text-sm font-semibold text-aqua">Welcome progress</p>
@@ -1032,14 +1032,34 @@ function GuideSection({ activeGuide, setActiveGuide }) {
 function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) {
   return (
     <Section id="ask" eyebrow="Ask Summer Concierge" title="Ask Summer is not a chatbot. It is a property-specific concierge.">
-      <p className="mb-7 max-w-3xl text-lg leading-8 text-slate-300">
-        Residents should not have to dig through old texts, remember lease language, search emails,
-        or call the office for every common question. Ask Summer gives them a trusted starting point -
-        trained on approved Summer Place information and designed to guide residents back to official
-        staff channels when needed.
-      </p>
-      <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="flex flex-wrap content-start gap-3">
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(420px,1.05fr)] lg:items-start">
+        <div className="space-y-5">
+          <Glass className="p-5 md:p-6">
+            <p className="text-lg leading-8 text-slate-300">
+              Residents should not have to dig through old texts, remember lease language, search
+              emails, or call the office for every common question. Ask Summer gives them a trusted
+              starting point - trained on approved Summer Place information and designed to guide
+              residents back to official staff channels when needed.
+            </p>
+          </Glass>
+          <Glass className="p-5">
+            <h3 className="mb-4 text-xl font-semibold text-white">Built with boundaries.</h3>
+            <div className="grid gap-3">
+              {[
+                "Approved information only",
+                "No guessing on account-specific issues",
+                "Urgent issues directed to staff",
+                "Emergency issues directed to official emergency paths",
+                "Every answer can point to an approved guide",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-xl bg-white/[0.05] p-3 text-sm text-slate-200">
+                  <ShieldCheck className="h-4 w-4 text-aqua" />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </Glass>
+          <div className="flex flex-wrap content-start gap-3">
           {Object.keys(askQuestions).map((question) => (
             <button
               key={question}
@@ -1051,6 +1071,7 @@ function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) 
               {question}
             </button>
           ))}
+          </div>
         </div>
         <Glass strong className="p-5 md:p-7">
           <div className="mb-5 flex items-center gap-3">
@@ -1408,7 +1429,8 @@ function FuturePossibilities() {
 function PilotSection() {
   return (
     <Section id="pilot" eyebrow="Pilot plan" title="Start focused. Prove the value. Build from there.">
-      <div className="grid gap-5 lg:grid-cols-3">
+      <div className="relative grid gap-5 lg:grid-cols-3">
+        <div className="pointer-events-none absolute left-[12%] right-[12%] top-10 hidden h-px bg-gradient-to-r from-transparent via-silver/20 to-transparent lg:block" />
         {pilotPhases.map((phase, index) => (
           <Glass key={phase.title} className="p-6">
             <div className="mb-5 flex items-center justify-between">
@@ -1489,7 +1511,7 @@ function FinalCta() {
     <section id="final" className="relative px-4 py-24 md:px-6">
       <BackgroundDetails compact />
       <Reveal>
-        <div className="premium-glass-strong mx-auto max-w-5xl p-8 text-center md:p-14">
+        <div className="premium-glass-strong mx-auto max-w-[1080px] p-8 text-center md:p-14">
           <div className="premium-glass mx-auto mb-7 grid h-24 w-24 place-items-center rounded-[1.8rem] p-3">
             <Logo className="h-full w-full rounded-full" />
           </div>
@@ -1519,7 +1541,7 @@ function FinalCta() {
 function Footer() {
   return (
     <footer className="border-t border-aqua/10 px-4 py-8 md:px-6">
-      <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-steel md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-3 text-sm text-steel md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
           <Logo className="h-9 w-9 rounded-full ring-1 ring-silver/20" />
           <p className="font-semibold text-slate-200">Summer Place Community Vision</p>
@@ -1826,12 +1848,12 @@ function BackgroundDetails({ compact = false }) {
 
 function Section({ id, eyebrow, title, children }) {
   return (
-    <section id={id} className="section-shell relative px-4 py-20 md:px-6 md:py-28">
+    <section id={id} className="section-shell relative px-4 py-20 md:px-6 md:py-24 xl:py-28">
       <BackgroundDetails compact />
       <Reveal>
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1280px]">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-aqua">{eyebrow}</p>
-          <h2 className="metallic-text mb-8 max-w-4xl text-4xl font-semibold leading-tight md:text-5xl">{title}</h2>
+          <h2 className="metallic-text section-heading mb-8 max-w-[980px] font-semibold">{title}</h2>
           {children}
         </div>
       </Reveal>
