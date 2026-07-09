@@ -31,34 +31,34 @@ const navItems = [
   ["App Preview", "pillars"],
   ["Resident Guide", "guide"],
   ["Ask Summer", "ask"],
-  ["Staff Benefit", "staff"],
+  ["Team Support", "staff"],
   ["Pilot", "pilot"],
 ];
 
 const opportunityCards = [
   {
-    title: "From scattered information to one resident home base",
-    copy: "Residents get one place that feels like Summer Place, not another disconnected system.",
+    title: "Support what already works",
+    copy: "The app would complement existing rent, maintenance, messaging, and website systems.",
     icon: ShieldCheck,
   },
   {
-    title: "From repeated reminders to real understanding",
-    copy: "Guides explain why expectations matter instead of only repeating what to do.",
+    title: "Make care more visible",
+    copy: "Residents can see helpful guides, community updates, property progress, and local resources in one place.",
     icon: Home,
   },
   {
-    title: "From local property to local standout",
-    copy: "Summer Place can feel more modern, more guided, and more memorable without pretending to be a luxury high-rise.",
+    title: "Strengthen the community feel",
+    copy: "A custom resident app can make Summer Place feel even more organized, connected, and cared for.",
     icon: Sparkles,
   },
 ];
 
 const biggerOpportunityCards = [
-  "From scattered information to one resident home base",
-  "From repeated reminders to real understanding",
-  "From rules on paper to guides residents can actually use",
-  "From apartment complex to community experience",
-  "From local property to local standout",
+  "Support the direction already happening",
+  "Make helpful information easier to revisit",
+  "Turn approved expectations into useful resident guides",
+  "Add another layer of connection and community",
+  "Help residents feel the care being put in",
 ];
 
 const apartmentTools = ["Rent portal", "Maintenance form", "Mass text", "Website"];
@@ -68,19 +68,19 @@ const experienceModes = [
     id: "moving",
     title: "I'm moving in",
     icon: KeyRound,
-    description: "See how a new resident gets guided through their first day, first week, and first month.",
+    description: "See how a new resident could feel even more welcomed through their first day, first week, and first month.",
   },
   {
     id: "question",
     title: "I have a question",
     icon: MessageCircle,
-    description: "See how Ask Summer helps residents get clarity before calling or texting the office.",
+    description: "See how Ask Summer gives residents a simple starting point for approved property questions.",
   },
   {
     id: "rules",
     title: "I want to understand the rules",
     icon: BookOpen,
-    description: "See how the Resident Guide turns expectations into simple, helpful education.",
+    description: "See how the Resident Guide turns expectations into simple, respectful guidance residents can revisit.",
   },
   {
     id: "connected",
@@ -92,35 +92,35 @@ const experienceModes = [
 
 const demoPanels = {
   moving: {
-    title: "Move-in becomes guided instead of overwhelming.",
+    title: "Move-in can feel even more guided and intentional.",
     scenario: "A new resident gets their keys, receives the Summer Place app link, creates their account, and chooses 'New Resident.'",
-    current: "Without one home base, move-in details spread across calls, texts, papers, and memory.",
+    current: "Staff already shares important move-in details through the channels residents use today.",
     helps: "The app turns the first week into a guided checklist with the right resources in one place.",
-    benefit: "New residents feel guided from day one, and staff gains a stronger place to direct recurring move-in needs.",
+    benefit: "New residents feel welcomed from day one, and the team has a polished place to point them back to.",
     screen: "settle",
   },
   question: {
-    title: "Common questions get answered before they become calls.",
+    title: "Common questions get a trusted place to start.",
     scenario: "A resident is unsure where bulk trash goes or what to do when the AC stops cooling.",
-    current: "Common questions often become office calls or texts because residents do not know where to start.",
-    helps: "Ask Summer gives a clear first answer, links the right guide, and redirects urgent or account-specific issues to staff.",
-    benefit: "Residents get clarity faster while official support channels stay protected.",
+    current: "Residents can already contact the office when they need help or direction.",
+    helps: "Ask Summer offers a clear first answer, links the right guide, and routes urgent or account-specific issues to official channels.",
+    benefit: "Residents get helpful context faster while staff communication remains protected and clear.",
     screen: "ask",
   },
   rules: {
-    title: "Better context creates better resident behavior.",
-    scenario: "Some issues repeat because residents get reminders but not enough explanation.",
-    current: "Reminders tell residents what to do. They do not always help residents understand why it matters.",
-    helps: "The Resident Guide turns expectations into short, respectful education residents can revisit.",
-    benefit: "The Resident Guide helps Summer Place educate without talking down to residents.",
+    title: "Better context supports shared expectations.",
+    scenario: "A resident wants to understand how a policy connects to daily apartment living.",
+    current: "Summer Place already communicates important expectations through existing channels.",
+    helps: "The Resident Guide turns those expectations into short, respectful guides residents can revisit.",
+    benefit: "Residents get helpful context while Summer Place reinforces expectations in a positive way.",
     screen: "smoke",
   },
   connected: {
-    title: "Summer Place feels alive between announcements.",
-    scenario: "Texts are great for urgent updates, but community needs a place residents can return to.",
-    current: "Updates disappear into message threads, and community moments do not have a permanent home.",
+    title: "Summer Place feels active between announcements.",
+    scenario: "Residents already receive important communication and updates from the property.",
+    current: "Timely messages do their job well in the moment.",
     helps: "The app gives events, perks, appreciation, staff spotlights, and property updates a polished resident feed.",
-    benefit: "Residents see Summer Place as more than buildings. They see an active community.",
+    benefit: "Residents can revisit the care, progress, and community moments Summer Place is already creating.",
     screen: "community",
   },
 };
@@ -191,9 +191,9 @@ const existingSystems = ["Rent portal", "Maintenance portal", "Mass texting", "W
 const communityAppSystems = ["Resident onboarding", "Learning guides", "Ask Summer concierge", "Community updates", "Local perks", "Resident knowledge base"];
 
 const summaryValues = [
-  ["Resident Experience", "Residents do not just get information. They get a clearer, smoother, more connected way to live here.", Users],
-  ["Community Identity", "Summer Place becomes more than buildings and units. It becomes a place with a digital home, shared expectations, local connection, and community energy.", Sparkles],
-  ["Staff Support", "Staff does not need another system to manage. They get a better place to point residents when the same questions, issues, and misunderstandings keep coming up.", ClipboardCheck],
+  ["For residents", "A smoother, clearer, more connected way to experience daily life at Summer Place.", Users],
+  ["For staff", "A helpful place to point residents for approved information, guides, and common questions.", ClipboardCheck],
+  ["For the community", "A digital home that reinforces the care and improvement already happening across the property.", Sparkles],
 ];
 
 const whyNowCards = [
@@ -221,10 +221,9 @@ const isNotList = [
 ];
 
 const localStandoutCards = [
-  ["Unexpectedly modern", "Residents feel like Summer Place is thinking beyond the basics.", Sparkles],
-  ["Locally connected", "Perks, partners, guides, and community moments connect residents to the area.", Store],
-  ["Resident-centered", "The app is built around how people actually live, not just how properties operate.", Users],
-  ["Memorable", "A better experience gives residents something to talk about and remember.", Star],
+  ["More connected", "Residents have one place to return to for guides, updates, perks, and community resources.", Sparkles],
+  ["More personal", "The experience feels specific to Summer Place, not like a generic app.", Store],
+  ["More memorable", "Residents can feel the extra care being put into the property and community.", Star],
 ];
 
 const futureCards = [
@@ -248,23 +247,23 @@ const managementTakeaways = [
 
 const pillars = [
   {
-    title: "Welcome System",
+    title: "Welcome Experience",
     icon: Home,
-    description: "A guided first impression for every new resident.",
+    description: "Make the first days at Summer Place feel even more guided and intentional.",
     microcopy: "Digital welcome",
     items: ["Welcome to Summer Place", "Your first 24 hours", "Your first week", "Meet the community", "Ask Summer if you get stuck"],
   },
   {
-    title: "Resident Intelligence Hub",
+    title: "Resident Guide",
     icon: BookOpen,
-    description: "A living guidebook that turns common issues into clear, respectful education.",
+    description: "Turn important property information into simple, respectful, easy-to-revisit guides.",
     microcopy: "Community knowledge",
     items: ["Smoke-Free Living", "Clean Community", "Shared Living", "Apartment Care", "Storm Prep"],
   },
   {
-    title: "Ask Summer Concierge",
+    title: "Ask Summer",
     icon: MessageCircle,
-    description: "An AI-powered resident assistant trained on approved Summer Place information.",
+    description: "Give residents a property-specific starting point for common approved questions.",
     microcopy: "Property-specific AI",
     items: ["Can I smoke inside?", "No smoking is permitted inside apartments.", "Suggested guide: Smoke-Free Living"],
     chat: true,
@@ -272,21 +271,21 @@ const pillars = [
   {
     title: "Community Pulse",
     icon: Users,
-    description: "A place where events, updates, appreciation, and property progress stay alive.",
+    description: "Keep updates, appreciation, property progress, and community moments easy to find.",
     microcopy: "Living community",
     items: ["Property Progress Update", "Resident Appreciation", "New Resident Welcome", "Community Pulse"],
   },
   {
-    title: "Local Perks Network",
+    title: "Local Perks",
     icon: Store,
-    description: "A resident benefit layer connecting Summer Place with local businesses and services.",
+    description: "Add value by connecting residents with local businesses, services, and offers.",
     microcopy: "Local connection",
     items: ["Local Partner Perk", "Groomed Gent Co. SUMMERPLACE20", "Local services", "Resident benefits"],
   },
   {
-    title: "Living Better at Summer Place",
+    title: "Living at Summer Place",
     icon: ClipboardCheck,
-    description: "A practical education layer that helps residents become more respectful, prepared, and confident without feeling talked down to.",
+    description: "Help residents better understand expectations, shared spaces, apartment care, and community life.",
     microcopy: "Better expectations",
     items: ["Neighbor respect", "Prepared living", "Odor respect", "Damage prevention", "Move-out clarity"],
   },
@@ -371,16 +370,16 @@ const askQuestions = {
 };
 
 const staffBenefits = [
-  ["Staff repeats the same explanation.", "Staff points to the approved guide."],
-  ["A reminder disappears in a text thread.", "The information stays available in the app."],
-  ["Residents misunderstand expectations.", "The app explains the context before frustration builds."],
+  ["Staff already communicates important information through existing channels.", "Residents can revisit that information anytime through the app."],
+  ["Residents can contact the office when they need help.", "Ask Summer can answer common approved questions first and guide residents to staff when needed."],
+  ["Policies and expectations already exist.", "The Resident Guide makes them easier to understand and return to."],
 ];
 
 const differentiators = [
   ["Custom to Summer Place", "Built around this property, this resident experience, and this community.", Building2],
   ["Resident-first", "Designed around the questions and situations residents actually deal with.", Users],
-  ["Education, not enforcement", "Guides help residents understand expectations without feeling talked down to.", ClipboardCheck],
-  ["Community, not just communication", "Texts tell people something happened. The app gives the community a place to live.", MessageCircle],
+  ["Respectful resident education", "Guides help residents understand expectations with practical context and a supportive tone.", ClipboardCheck],
+  ["Community and communication", "Timely messages still matter. The app gives residents a place to revisit updates, guides, and community resources.", MessageCircle],
   ["Built in phases", "Start focused, learn from management feedback, then expand.", Sparkles],
 ];
 
@@ -560,25 +559,25 @@ function Hero() {
             </div>
             <p className="mb-5 text-sm text-steel">A resident experience concept by Gent Ascend Collective.</p>
             <h1 className="metallic-text hero-heading font-semibold">
-              Summer Place can become more than a place people rent.
+              Building on the next chapter of Summer Place.
             </h1>
             <p className="executive-copy mt-7 text-slate-200">
-              It can become a community residents understand, respect, connect with, and feel proud
-              to call home.
+              Summer Place is already moving in a stronger direction - with more care, clearer
+              communication, and renewed attention to the resident experience.
             </p>
             <p className="executive-copy mt-5 text-steel">
-              The Summer Place Community App is a custom resident experience layer - designed to help
-              residents settle in, learn how to live here well, connect with the community, access
-              local perks, and get trusted answers through an AI concierge built around
-              Summer Place-approved information.
+              This concept shows how a custom community app could help residents feel that progress
+              every day by giving them one polished home base to get settled, understand expectations,
+              explore helpful guides, connect with the community, access local perks, and ask approved
+              property questions through Ask Summer.
             </p>
             <p className="mt-4 max-w-2xl rounded-2xl border border-aqua/20 bg-white/[0.045] p-4 text-sm leading-6 text-slate-300 backdrop-blur">
-              Not another portal. Not another reminder system. A digital community experience built
-              for Summer Place.
+              Not a replacement for existing systems. A resident experience layer that supports the
+              direction Summer Place is already building.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a href="#opportunity" className="primary-btn">Explore the Community Vision <ArrowRight className="h-4 w-4" /></a>
-              <a href="#pillars" className="secondary-btn">See What Residents Experience <Phone className="h-4 w-4" /></a>
+              <a href="#opportunity" className="primary-btn">Explore the Vision <ArrowRight className="h-4 w-4" /></a>
+              <a href="#pillars" className="secondary-btn">See the App Experience <Phone className="h-4 w-4" /></a>
             </div>
           </div>
         </Reveal>
@@ -592,12 +591,12 @@ function Hero() {
 
 function ExecutiveSummary() {
   return (
-    <Section id="summary" eyebrow="Executive summary" title="The opportunity in one sentence.">
+    <Section id="summary" eyebrow="Executive summary" title="The vision in one sentence.">
       <Glass strong className="p-6 md:p-9">
         <p className="max-w-5xl text-2xl font-semibold leading-10 text-white md:text-3xl">
-          Give Summer Place something most apartment communities around here do not have: a custom
-          mobile community experience that makes residents feel guided from day one, connected while
-          they live here, and more confident in how to be part of the community.
+          Build on Summer Place's current progress with a custom resident experience app that helps
+          people feel welcomed, informed, connected, and supported throughout their time in the
+          community.
         </p>
         <div className="mt-7 grid gap-4 md:grid-cols-3">
           {summaryValues.map(([title, copy, Icon]) => (
@@ -615,13 +614,17 @@ function ExecutiveSummary() {
 
 function BiggerOpportunitySection() {
   return (
-    <Section id="bigger-opportunity" eyebrow="Bigger opportunity" title="The real opportunity is not communication. It is community.">
+    <Section id="bigger-opportunity" eyebrow="Bigger opportunity" title="An opportunity to build on the momentum.">
       <Glass strong className="p-6 md:p-8">
         <p className="max-w-4xl text-lg leading-8 text-slate-200">
-          Texts can notify residents. Portals can process maintenance. Websites can show floor plans.
-          But none of those things make a resident feel truly guided, connected, or part of something.
+          Summer Place is already being improved physically, operationally, and through stronger
+          communication. The opportunity now is to create a digital experience that helps residents
+          feel that same care in their day-to-day life.
         </p>
-        <p className="mt-5 text-2xl font-semibold text-white">The Summer Place Community App fills that gap.</p>
+        <p className="mt-5 text-2xl font-semibold text-white">
+          The Community App would add another layer of connection, clarity, and community to the work
+          already being done.
+        </p>
         <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {biggerOpportunityCards.map((card) => (
             <div key={card} className="rounded-[1.5rem] border border-silver/15 bg-white/[0.045] p-4 text-sm font-semibold leading-6 text-slate-100">
@@ -630,7 +633,7 @@ function BiggerOpportunitySection() {
           ))}
         </div>
         <p className="mt-7 text-center text-xl font-semibold text-white">
-          This is how Summer Place can feel different without pretending to be a luxury high-rise.
+          This is how the progress residents already see can become part of everyday life at Summer Place.
         </p>
       </Glass>
     </Section>
@@ -639,16 +642,17 @@ function BiggerOpportunitySection() {
 
 function WhyNowSection() {
   return (
-    <Section id="why-now" eyebrow="Why now" title="Why this matters now.">
+    <Section id="why-now" eyebrow="Why now" title="Why this is the right moment.">
       <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <Glass className="p-7">
           <p className="text-lg leading-8 text-slate-200">
-            Summer Place is already being improved physically and operationally. The next opportunity
-            is emotional and experiential: helping residents feel the care being put into the property.
+            Because Summer Place is already moving in the right direction. The property is being
+            improved, communication is stronger, and residents can feel that more attention is being
+            put into the community.
           </p>
           <p className="mt-6 text-xl font-semibold leading-8 text-white">
-            When residents feel more guided, they feel more respected. When they feel more respected,
-            the community gets stronger.
+            When residents can clearly see the care being put into the property, that care becomes
+            part of how they experience living here.
           </p>
         </Glass>
         <div className="grid gap-4">
@@ -721,12 +725,13 @@ function ResidentJourneyDemo({ activeExperience, setActiveExperience }) {
             <h3 className="metallic-text text-3xl font-semibold leading-tight md:text-5xl">{demo.title}</h3>
             <div className="mt-7 grid gap-4 md:grid-cols-2">
               <StoryBlock label="Resident situation" text={demo.scenario} />
-              <StoryBlock label="What usually happens now" text={demo.current} />
+              <StoryBlock label="Current foundation" text={demo.current} />
               <StoryBlock label="How the app helps" text={demo.helps} />
               <StoryBlock label="Staff/community benefit" text={demo.benefit} />
             </div>
             <p className="mt-7 rounded-2xl border border-aqua/20 bg-white/[0.045] p-4 text-sm leading-6 text-slate-300">
-              Community is easier to build when residents have one trusted home base.
+              Community gets stronger when residents have one trusted place to revisit what Summer
+              Place is already sharing and building.
             </p>
           </div>
           <PhoneScreenLibrary screen={demo.screen} />
@@ -747,12 +752,12 @@ function StoryBlock({ label, text }) {
 
 function OpportunitySection() {
   return (
-    <Section id="opportunity" eyebrow="The experience layer" title="You already have the systems. This creates the experience.">
+    <Section id="opportunity" eyebrow="The experience layer" title="A community layer that complements existing systems.">
       <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         <Glass strong className="p-6 md:p-8">
           <p className="max-w-2xl text-lg leading-8 text-slate-200">
-            The app does not compete with existing tools. It makes those tools easier for residents
-            to understand and use.
+            Existing portals and systems can continue doing what they do well. The Community App
+            would add a more resident-facing experience around them.
           </p>
           <div className="mt-7 grid gap-3 sm:grid-cols-2">
             {apartmentTools.map((tool) => (
@@ -768,10 +773,10 @@ function OpportunitySection() {
           </div>
           <div className="rounded-[1.75rem] border border-silver/25 bg-gradient-to-br from-gunmetal/55 to-deepblue/35 p-6 shadow-glow">
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-silver">Summer Place Community App</p>
-            <h3 className="mt-2 text-3xl font-semibold text-white">A digital community home</h3>
+            <h3 className="mt-2 text-3xl font-semibold text-white">A digital home for resident experience</h3>
             <p className="mt-4 leading-7 text-slate-200">
-              A resident identity layer, guided move-in experience, living knowledge base, local
-              connection hub, and AI concierge grounded in property-approved information.
+              A welcoming move-in experience, resident guide, community feed, local connection hub,
+              and Ask Summer concierge grounded in property-approved information.
             </p>
           </div>
         </Glass>
@@ -794,9 +799,9 @@ function OpportunitySection() {
 }
 
 function GapSection() {
-  const scattered = ["Text reminders", "Emails", "Lease packet", "Flyers", "Office calls", "Website", "Maintenance portal", "Word of mouth"];
+  const scattered = ["Text updates", "Emails", "Lease packet", "Flyers", "Office support", "Website", "Maintenance portal", "Resident conversations"];
   return (
-    <Section id="gap" eyebrow="Resident experience gap" title="Residents don't always need more reminders. They need one place to understand.">
+    <Section id="gap" eyebrow="Resident moments" title="Important information becomes easier to revisit when it has one home.">
       <Glass className="relative min-h-[500px] overflow-hidden p-5 md:p-8">
         <div className="map-lines" />
         <motion.div
@@ -810,7 +815,8 @@ function GapSection() {
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-aqua">One trusted home base</p>
           <h3 className="mt-2 text-2xl font-semibold text-white">Summer Place Community App</h3>
           <p className="mt-4 text-sm leading-6 text-slate-300">
-            Scattered information creates repeated questions. A central experience creates clarity.
+            Residents already receive important communication. The app would make that information
+            easier to revisit, understand, and connect with over time.
           </p>
         </motion.div>
         {scattered.map((item, index) => (
@@ -839,8 +845,8 @@ function ResidentLifecycleMap() {
   return (
     <Section id="lifecycle" eyebrow="Resident lifecycle" title="One app across the resident journey.">
       <p className="mb-8 max-w-3xl text-lg leading-8 text-slate-300">
-        Instead of only helping residents when something goes wrong, the app supports the full
-        experience of living at Summer Place.
+        The app would extend the resident experience across move-in, daily living, community updates,
+        renewal season, and move-out support.
       </p>
       <Glass strong className="p-5 md:p-7">
         <div className="grid gap-4 lg:grid-cols-7">
@@ -862,7 +868,7 @@ function ResidentLifecycleMap() {
 
 function PillarsSection({ activePillar, setActivePillar }) {
   return (
-    <Section id="pillars" eyebrow="Clickable app preview" title="The resident experience layer, broken into six powerful parts.">
+    <Section id="pillars" eyebrow="Clickable app preview" title="The resident experience layer, organized into six supportive parts.">
       <div className="grid gap-8 xl:grid-cols-[1fr_430px] xl:items-center">
         <div className="grid gap-3 md:grid-cols-2">
           {pillars.map((pillar) => (
@@ -891,11 +897,11 @@ function PillarsSection({ activePillar, setActivePillar }) {
 
 function JourneySection({ activeStep, setActiveStep, progress }) {
   return (
-    <Section id="journey" eyebrow="Welcome System" title="First impressions should feel guided, not handed off.">
+    <Section id="journey" eyebrow="Welcome Experience" title="First impressions can feel even more guided and personal.">
       <p className="mb-7 max-w-4xl text-lg leading-8 text-slate-300">
-        When a new resident moves in, the experience should not stop at keys, paperwork, and a portal
-        login. The app can welcome them into the community, walk them through the first week, explain
-        expectations, and make Summer Place feel organized from the start.
+        When a new resident moves in, the app can complement keys, paperwork, and existing systems
+        with a warm digital welcome, a first-week checklist, helpful expectations, and a clearer
+        sense of the Summer Place community.
       </p>
       <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_420px] xl:items-start">
         <Glass strong className="p-5 md:p-7">
@@ -945,7 +951,7 @@ function JourneySection({ activeStep, setActiveStep, progress }) {
         </Glass>
       </div>
       <p className="mt-7 text-center text-2xl font-semibold text-white">
-        A stronger first week creates better expectations for the entire lease.
+        A thoughtful first week helps residents feel the care behind the whole community experience.
       </p>
     </Section>
   );
@@ -953,15 +959,15 @@ function JourneySection({ activeStep, setActiveStep, progress }) {
 
 function GuideSection({ activeGuide, setActiveGuide }) {
   return (
-    <Section id="guide" eyebrow="Resident Intelligence Hub" title="The Resident Guide is where repeated problems become teachable moments.">
+    <Section id="guide" eyebrow="Resident Guide" title="Helpful guides that make expectations easier to understand.">
       <p className="mb-7 max-w-3xl text-lg leading-8 text-slate-300">
-        Many apartment issues do not repeat because residents are bad people. They repeat because
-        expectations are scattered, reminders disappear, and people do not always understand the why
-        behind the rule. The Resident Guide gives Summer Place a better way to educate - calm, clear,
-        respectful, and always available.
+        Summer Place already communicates expectations to residents. The Resident Guide would make
+        those expectations easier to revisit, easier to understand, and easier to connect to real-life
+        apartment living.
       </p>
       <p className="mb-7 max-w-3xl rounded-2xl border border-silver/15 bg-white/[0.045] p-4 text-lg font-semibold text-white">
-        This is not enforcement. It is expectation design.
+        Approved information becomes clear resident education: practical, respectful, and always
+        available.
       </p>
       <div className="grid gap-6 xl:grid-cols-[1fr_420px]">
         <div className="grid gap-4 md:grid-cols-2">
@@ -983,7 +989,7 @@ function GuideSection({ activeGuide, setActiveGuide }) {
           ))}
         </div>
         <Glass strong className="p-6">
-          <p className="text-sm font-semibold text-aqua">Case study preview</p>
+          <p className="text-sm font-semibold text-aqua">Example guide preview</p>
           <h3 className="mt-2 text-2xl font-semibold text-white">Example: {activeGuide}</h3>
           {activeGuide === guidePreview.title ? (
             <div className="mt-5 space-y-3">
@@ -1001,10 +1007,11 @@ function GuideSection({ activeGuide, setActiveGuide }) {
             </p>
           )}
           <p className="mt-6 rounded-lg border border-white/10 bg-white/[0.045] p-4 text-sm leading-6 text-slate-300">
-            This is an area where Gent Ascend can bring real insight. Neil spent over three years in
-            Louisiana medical cannabis and completed more than 15,000 deliveries, many to apartment
-            communities. That experience can help turn a repeated property frustration into a
-            practical, respectful resident education module.
+            Summer Place already communicates the no-smoking addendum clearly. This guide would
+            support that communication by giving residents more context around odor, shared living,
+            renovated units, legal cannabis awareness, and respectful choices. This example could be
+            informed by Neil's real-world experience in Louisiana medical cannabis and more than
+            15,000 deliveries, many to apartment communities.
           </p>
         </Glass>
         <Glass className="p-5">
@@ -1031,26 +1038,25 @@ function GuideSection({ activeGuide, setActiveGuide }) {
 
 function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) {
   return (
-    <Section id="ask" eyebrow="Ask Summer Concierge" title="Ask Summer is not a chatbot. It is a property-specific concierge.">
+    <Section id="ask" eyebrow="Ask Summer" title="Ask Summer gives residents a trusted place to start.">
       <div className="grid gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(420px,1.05fr)] lg:items-start">
         <div className="space-y-5">
           <Glass className="p-5 md:p-6">
             <p className="text-lg leading-8 text-slate-300">
-              Residents should not have to dig through old texts, remember lease language, search
-              emails, or call the office for every common question. Ask Summer gives them a trusted
-              starting point - trained on approved Summer Place information and designed to guide
-              residents back to official staff channels when needed.
+              Ask Summer would not replace the office or official support channels. It would give
+              residents a simple, property-specific starting point for common questions, using only
+              Summer Place-approved information.
             </p>
           </Glass>
           <Glass className="p-5">
             <h3 className="mb-4 text-xl font-semibold text-white">Built with boundaries.</h3>
             <div className="grid gap-3">
               {[
-                "Approved information only",
-                "No guessing on account-specific issues",
-                "Urgent issues directed to staff",
-                "Emergency issues directed to official emergency paths",
-                "Every answer can point to an approved guide",
+                "Uses approved Summer Place information",
+                "Points residents to official channels when needed",
+                "Avoids account-specific guessing",
+                "Supports staff communication rather than replacing it",
+                "Helps residents find the right guide, contact path, or next step",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-xl bg-white/[0.05] p-3 text-sm text-slate-200">
                   <ShieldCheck className="h-4 w-4 text-aqua" />
@@ -1109,9 +1115,10 @@ function AskSection({ activeQuestion, setActiveQuestion, askAnswer, isTyping }) 
 function QuestionGrid({ activeQuestion, setActiveQuestion }) {
   const [answer, guide] = questionAnswers[activeQuestion];
   return (
-    <Section id="questions" eyebrow="Ask before contacting" title="What residents can ask before contacting the office.">
+    <Section id="questions" eyebrow="Approved questions" title="Common questions can start in one trusted place.">
       <p className="mb-7 max-w-3xl text-lg leading-8 text-slate-300">
-        Ask Summer is designed to reduce confusion, not replace staff.
+        Ask Summer supports staff communication by helping residents find approved information,
+        helpful guides, and the right official contact path when needed.
       </p>
       <div className="grid gap-6 xl:grid-cols-[1fr_420px]">
         <div className="grid gap-4 md:grid-cols-2">
@@ -1159,7 +1166,8 @@ function ContentLibraryPreview() {
   return (
     <Section id="library" eyebrow="Living knowledge base" title="The app becomes a living resident knowledge base.">
       <p className="mb-7 max-w-3xl text-lg leading-8 text-slate-300">
-        Start with the highest-impact guides, then grow based on the questions residents actually ask.
+        Start with the most useful approved guides, then grow based on resident feedback and the
+        moments Summer Place wants to support next.
       </p>
       <div className="mb-6 grid gap-4 md:grid-cols-3">
         {["40+ potential resident guides", "6 core app sections", "1 trusted home base"].map((stat) => (
@@ -1188,19 +1196,20 @@ function ContentLibraryPreview() {
 
 function CommunitySection() {
   const cards = [
-    ["Property Progress Update", "Show residents how Summer Place is improving, not just tell them.", Building2],
+    ["Property Progress Update", "Give residents a visible place to see how Summer Place is improving.", Building2],
     ["Resident Appreciation", "Give appreciation moments a place residents can revisit.", Users],
     ["New Resident Welcome", "Make move-in feel like joining a community, not just signing paperwork.", Home],
     ["Storm Prep Guide", "Turn seasonal preparation into a clear resident experience.", ShieldCheck],
-    ["Smoke-Free Living Case Study", "Use education to reduce friction around repeated property concerns.", BookOpen],
+    ["Smoke-Free Living Case Study", "Support existing communication with tasteful resident education.", BookOpen],
     ["Local Partner Perk", "Groomed Gent Co. - 20% off with SUMMERPLACE20", Store],
     ["Community Pulse", "Keep events, updates, perks, and property energy alive between announcements.", Sparkles],
   ];
   return (
-    <Section id="community" eyebrow="Community Pulse" title="Make Summer Place feel alive between announcements.">
+    <Section id="community" eyebrow="Community Pulse" title="Give community moments a place residents can return to.">
       <p className="mb-7 max-w-3xl text-lg leading-8 text-slate-300">
-        A text can notify residents, but it disappears into a thread. Community Pulse gives Summer
-        Place a digital home for progress, appreciation, local connection, and shared energy.
+        Texts are great for timely communication. Community Pulse would give residents a permanent
+        place to revisit updates, guides, property progress, appreciation, local connection, and
+        shared energy.
       </p>
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {cards.map(([title, copy, Icon]) => (
@@ -1273,15 +1282,15 @@ function NoDisruptionSection() {
       <Glass strong className="p-6 md:p-8">
         <p className="mx-auto mb-7 max-w-4xl text-center text-lg leading-8 text-slate-200">
           Summer Place already has systems for payments, maintenance, messaging, and management. The
-          Community App does not compete with those systems. It gives residents a better place to
-          understand them.
+          Community App does not compete with those systems. It gives residents another polished
+          place to understand them and return to helpful information.
         </p>
         <div className="grid gap-5 md:grid-cols-2">
           <SystemList title="Existing Systems" items={existingSystems} />
           <SystemList title="Community App" items={communityAppSystems} />
         </div>
         <p className="mt-7 text-center text-2xl font-semibold text-white">
-          Operations stay where they are. Resident experience gets upgraded.
+          Operations stay where they are. Resident experience gets an added layer.
         </p>
       </Glass>
     </Section>
@@ -1306,19 +1315,19 @@ function SystemList({ title, items }) {
 
 function StaffSection() {
   return (
-    <Section id="staff" eyebrow="Staff leverage" title="Staff gets leverage without another complicated system.">
+    <Section id="staff" eyebrow="Team support" title="Built to support the team without replacing the systems they already use.">
       <p className="mb-7 max-w-4xl text-lg leading-8 text-slate-300">
-        The app gives staff a stronger answer than repeating the same message again. Instead of only
-        saying "we sent a text," staff can point residents to a permanent guide, a clear app section,
-        or Ask Summer.
+        The Community App would not change how Summer Place handles rent, maintenance, official
+        communication, or management workflows. It would simply give the team a polished
+        resident-facing resource they can point people to when questions come up.
       </p>
       <div className="grid gap-4 lg:grid-cols-3">
         {staffBenefits.map(([before, after]) => (
           <Glass key={before} className="p-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">Before</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">Current</p>
             <p className="mt-3 min-h-20 text-slate-200">{before}</p>
             <div className="my-5 h-px bg-white/10" />
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-aqua">After</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-aqua">Added layer</p>
             <p className="mt-3 font-semibold leading-7 text-white">{after}</p>
           </Glass>
         ))}
@@ -1333,7 +1342,7 @@ function StaffSection() {
 
 function DifferentSection() {
   return (
-    <Section id="different" eyebrow="What makes this different" title="This is not a generic apartment app.">
+    <Section id="different" eyebrow="What makes this different" title="Custom to the Summer Place resident experience.">
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
         {differentiators.map(([title, copy, Icon]) => (
           <Glass key={title} className="p-5">
@@ -1349,11 +1358,13 @@ function DifferentSection() {
 
 function LocalStandoutSection() {
   return (
-    <Section id="standout" eyebrow="Local opportunity" title="Most complexes around here have portals. Summer Place could have a community.">
+    <Section id="standout" eyebrow="Local opportunity" title="A chance to create something unique for the community.">
       <Glass strong className="p-6 md:p-8">
         <p className="max-w-4xl text-lg leading-8 text-slate-200">
-          A resident portal is expected. A maintenance form is expected. Text reminders are expected.
-          A custom community app built around the real resident experience is not expected.
+          Many apartment communities have portals, websites, and messaging systems. Summer Place
+          already has important tools in place. The opportunity here is to add something more
+          personal and community-focused - a custom app experience built around the people who
+          actually live here.
         </p>
         <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {localStandoutCards.map(([title, copy, Icon]) => (
@@ -1365,8 +1376,8 @@ function LocalStandoutSection() {
           ))}
         </div>
         <p className="mt-7 text-center text-xl font-semibold text-white">
-          This is a chance to build something different without needing to become something Summer
-          Place is not.
+          This is a chance to build something distinctive while staying true to Summer Place's own
+          identity and momentum.
         </p>
       </Glass>
     </Section>
@@ -1389,8 +1400,8 @@ function FinishedAppVision() {
     <Section id="finished-app" eyebrow="Finished app vision" title="What the finished app could feel like.">
       <Glass strong className="p-6 md:p-8">
         <p className="max-w-4xl text-lg leading-8 text-slate-200">
-          Imagine a resident opening the app and seeing Summer Place not as scattered buildings, but
-          as a living community.
+          Imagine a resident opening the app and seeing the care, progress, and community identity
+          Summer Place is already building.
         </p>
         <div className="mt-7 grid gap-3 md:grid-cols-3">
           {sequence.map((item) => (
@@ -1400,7 +1411,7 @@ function FinishedAppVision() {
           ))}
         </div>
         <p className="mt-7 text-center text-2xl font-semibold text-white">
-          That is not just information. That is resident experience.
+          That is information, guidance, and community presence working together.
         </p>
       </Glass>
     </Section>
@@ -1420,7 +1431,8 @@ function FuturePossibilities() {
         ))}
       </div>
       <p className="mt-7 rounded-[1.5rem] border border-aqua/20 bg-white/[0.045] p-5 text-center text-xl font-semibold text-white">
-        Start with the core experience. Grow only where it creates real value.
+        Start with the core experience. Grow where resident feedback and management priorities show
+        the clearest value.
       </p>
     </Section>
   );
@@ -1428,7 +1440,7 @@ function FuturePossibilities() {
 
 function PilotSection() {
   return (
-    <Section id="pilot" eyebrow="Pilot plan" title="Start focused. Prove the value. Build from there.">
+    <Section id="pilot" eyebrow="Pilot plan" title="Start focused. Learn together. Build from there.">
       <div className="relative grid gap-5 lg:grid-cols-3">
         <div className="pointer-events-none absolute left-[12%] right-[12%] top-10 hidden h-px bg-gradient-to-r from-transparent via-silver/20 to-transparent lg:block" />
         {pilotPhases.map((phase, index) => (
@@ -1469,8 +1481,8 @@ function WhySection() {
         <Glass className="p-7">
           <p className="text-lg leading-8 text-slate-200">
             I am not approaching this as an outside software vendor guessing what residents need. I
-            live at Summer Place. I see the improvements being made, the questions residents ask, and
-            the opportunity to help the community feel more guided and connected.
+            live at Summer Place. I see the improvements being made, the care being put in, and the
+            opportunity to help residents feel that progress more clearly every day.
           </p>
           <p className="mt-5 text-lg leading-8 text-slate-200">
             Gent Ascend Collective was created to build practical technology for real local
@@ -1491,7 +1503,7 @@ function WhySection() {
 
 function ManagementTakeaway() {
   return (
-    <Section id="takeaway" eyebrow="Management takeaway" title="What Summer Place gets.">
+    <Section id="takeaway" eyebrow="Management takeaway" title="What this would add for Summer Place.">
       <Glass strong className="p-6 md:p-8">
         <div className="grid gap-3 md:grid-cols-2">
           {managementTakeaways.map((item) => (
@@ -1516,15 +1528,15 @@ function FinalCta() {
             <Logo className="h-full w-full rounded-full" />
           </div>
           <h2 className="metallic-text text-4xl font-semibold leading-tight md:text-6xl">
-            Summer Place can build something residents do not expect.
+            Summer Place is already building momentum.
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-xl leading-8 text-slate-200">
-            A community app that makes the property feel more guided, more connected, and more cared for.
+            This app would help residents feel that momentum every day.
           </p>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-300">
-            The buildings are being improved. The communication is already stronger. The next step is
-            creating a resident experience that makes people feel the difference every time they open
-            their phone.
+            The property is being improved. Communication is stronger. The resident experience is
+            moving in the right direction. The Community App would give that progress a digital home -
+            a place to settle in, learn, ask, connect, and feel more connected to Summer Place.
           </p>
           <a href="mailto:" className="primary-btn mx-auto mt-9 w-fit">
             Let's Build the Community Layer <ArrowRight className="h-4 w-4" />
@@ -1708,7 +1720,7 @@ function SmokeGuideScreen() {
   return (
     <PhoneScreenScaffold title="Smoke-Free Living" eyebrow="Guide Preview">
       <div className="rounded-2xl border border-aqua/20 bg-aqua/10 p-3 text-sm leading-6 text-slate-100">
-        Respect the no-smoking addendum, reduce odor complaints, protect renovated units, and help residents make cleaner choices.
+        Support the no-smoking addendum with clear context around odor respect, shared living, and renovated apartments.
       </div>
       <PhoneList items={["Respect the addendum", "Why odor travels", "Protecting renovated units", "Lower-odor options", "Outdoor courtesy"]} />
     </PhoneScreenScaffold>
